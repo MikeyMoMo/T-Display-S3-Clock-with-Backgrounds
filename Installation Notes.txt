@@ -1,0 +1,52 @@
+This build is a little complicated.  Please follow these steps, in order, and don't get in a rush.
+
+1. Upgrade to ESP32 board level 3.1.3 or higher.
+
+2. You will need to upload in LittleFS format.  To do that, install a new esp32fs.jar file from here: 
+   https://randomnerdtutorials.com/esp32-littlefs-arduino-ide/
+
+3. Set your dark hours.  Look for DARK_START and DARK_END.  These are defaults and can be overridden by
+   pressing the buttons to turn the display on during any of these hours.  You can also change the brightness for other hours of
+   the day or night and the setting will be remembered for the same hour every day.
+
+4. Compile, load and run the program.  No pictures are loaded yet.  It will find no pix and use only the three built-in 
+   graphics backgrounds, red, green and blue until pix are loaded.
+
+5. The first time it is run, it might take a while to get around to making a display.
+   During this time, it is formatting the spiffs/littlefs partition to accept the LittleFS background pictures.
+   You can turn on the Serial Monitor and watch the error message repeat every 0 to 5ms for 
+   the entire time it is formatting the spiffs area.
+
+6. When you get a display, close the Serial Monitor window.  It interferes with the pictures upload.  They forgot to disable
+   the Serial Monitor window.  It is done during compile but not during file uploading.  That's a bug!
+
+7. Select Tools>ESP32 Sketch Data Upload from the menu, then select LittleFS and press OK.  It will create a compressed file and
+   send it to the spiffs partition on the board.  When done, it will reboot, all by itself, start working normally.
+
+8. The partition definitions file MUST be named "partitions.csv" or it will be ignored.  Don't change the name.  I could not find any
+   documentation that specifies that requirement but it is required.  It must be in the sketch folder.  The alternative is to edit
+   the boards.txt file but is messy and it means that any time you upgrade or reinstall, you will lose that change.  Better to just
+   put it in the sketch folder and be done with it.
+
+9. If you choose to add pictures, create them at 320x170 (w x h) pixels and save then in the data folder.  Then add them to the
+   routine named "BuildAndShow".  Be sure to keep the sequence of the numbers in the Switch statement.  As of this writing, there are
+   119 pictures so the next one should be 120.  The format of the call to SetPic_Colors is:
+   
+      first parm: Color of the time characters
+   
+      second parm: Color of the data characters
+   
+      third parm: Color of the backlight characters (only on screen while changing the brightness of the screen)
+   
+      fourth parm: true or false.  If true, add a darkening screen behind the time characters to lower the brightness of the
+      background.
+   
+      fifth parm: true or false.  If true, add a darkening screen behind the date characters to lower the brightness of the
+      background.
+   
+   Yeah, I know the order is messed up but that's how it evolved.  Lots of busywork to fix it.  May do or may not do...
+
+10. The files are normal .jpg files.  You do not have to create bitmaps for them.  Just copy your picture into the data file.  Thank
+    the creator of the jpg library for giving us an easy way to get jpg's onto the screen without having to turn them into hex code!
+    Also thanks for enabling pulling them from the data partition rather than SD card.  Made the project a lot easier!
+    

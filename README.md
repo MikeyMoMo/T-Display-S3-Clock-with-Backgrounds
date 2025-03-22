@@ -32,22 +32,11 @@ I have learned a bit about installing this for the first time.  I had a friend d
    put it in the sketch folder and be done with it.
 
 9. If you choose to add pictures, create them at 320x170 (w x h) pixels and save then in the data folder.  Then add them to the
-   routine named "BuildAndShow".  Be sure to keep the sequence of the numbers in the Switch statement.  As of this writing, there are
-   119 pictures so the next one should be 120.  The format of the call to SetPic_Colors is:
+   array named "FillPixArray".  As of this writing, there are 119 pictures so the next one should be 120.  The info in the array consists of:
    
-      first parm: Color of the time characters
-   
-      second parm: Color of the data characters
-   
-      third parm: Color of the backlight characters (only on screen while changing the brightness of the screen)
-   
-      fourth parm: true or false.  If true, add a darkening screen behind the time characters to lower the brightness of the
+      Color of the time characters, Color of the data characters, Color of the backlight characters (only on screen while changing the brightness of the screen)
+      and two hatching control bools (true or false)  If true, add a darkening screen behind the time characters to lower the brightness of the
       background.
-   
-      fifth parm: true or false.  If true, add a darkening screen behind the date characters to lower the brightness of the
-      background.
-   
-   Yeah, I know the order is messed up but that's how it evolved.  Lots of busywork to fix it.  May do or may not do...
 
 10. The files are normal .jpg files.  You do not have to create bitmaps for them.  Just copy your picture into the data file.  Thank
     the creator of the jpg library for giving us an easy way to get jpg's onto the screen without having to turn them into hex code!

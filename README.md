@@ -55,7 +55,7 @@ I have learned a bit about installing this for the first time.  I had a friend d
 
 11. Be sure to change your WiFi credentials.  Look for chSsid.
 
-12. In the TFT_eSPI folder, edit the User_Setup_Select and use this setup file if you will be using the T-Display S3:
+12. In the TFT_eSPI folder, edit the User_Setup_Select.h and use this setup file if you will be using the T-Display S3:
     "Setup206_LilyGo_T_Display_S3.h>  // Setup file for T-Display ESP32-S3"
     
 This is a very greatly modified version of a clock originally found here: https://www.instructables.com/T-Display-S3-NTP-Clock/

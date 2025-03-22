@@ -12,7 +12,7 @@ I have learned a bit about installing this for the first time.  I had a friend d
    pressing the buttons to turn the display on during any of these hours.  You can also change the brightness for other hours of
    the day or night and the setting will be remembered for the same hour every day.
 
-4. Compile, load and run the program.  No pictures are loaded yet.  It will find no pix and use only the three built-in 
+4. Setup your Tools menu per the .jpg included in the zip file then compile, load and run the program.  No pictures are loaded yet.  It will find no pix and use only the three built-in 
    graphics backgrounds, red, green and blue until pix are loaded.  Wait till you see time and date.
 
 5. The first time it is run, it might take a while to get around to making a display.

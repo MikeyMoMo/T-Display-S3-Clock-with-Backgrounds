@@ -53,7 +53,11 @@ I have learned a bit about installing this for the first time.  I had a friend d
     the creator of the jpg library for giving us an easy way to get jpg's onto the screen without having to turn them into hex code!
     Also thanks for enabling pulling them from the data partition rather than SD card.  Made the project a lot easier!
 
+11. Be sure to change your WiFi credentials.  Look for chSsid.
 
+12. In the TFT_eSPI folder, edit the User_Setup_Select and use this setup file if you will be using the T-Display S3:
+    "Setup206_LilyGo_T_Display_S3.h>  // Setup file for T-Display ESP32-S3"
+    
 This is a very greatly modified version of a clock originally found here: https://www.instructables.com/T-Display-S3-NTP-Clock/
 
 I have added many features to this original code.  Very little of the original code is left.

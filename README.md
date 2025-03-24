@@ -32,7 +32,7 @@ I have learned a bit about installing this for the first time.  I had a friend d
    put it in the sketch folder and be done with it.
 
 9. If you choose to add pictures, create them at 320x170 (w x h) pixels and save then in the data folder.  Then add them to the
-   array named "FillPixArray".  As of this writing, there are 119 pictures so the next one should be 120.  The info in the array consists of:
+   array named "FillPixArray".  As of this writing, there are 194 pictures so the next one should be 120.  The info in the array consists of:
    
       Color of the time characters, Color of the data characters, Color of the backlight characters (only on screen while changing the brightness of the screen)
       and two hatching control bools (true or false)  If true, add a darkening screen behind the time characters to lower the brightness of the

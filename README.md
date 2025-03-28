@@ -13,7 +13,7 @@ I have learned a bit about installing this for the first time.  I had a friend d
    the day or night and the setting will be remembered for the same hour every day.
 
 4. Setup your Tools menu per the .jpg included in the zip file then compile, load and run the program.  No pictures are loaded yet.  It will find no pix and use only the three built-in 
-   graphics backgrounds, red, green and blue until pix are loaded.  Wait till you see time and date.
+   graphics backgrounds, red, green and blue until pix are loaded.  Wait till you see time and date.  Be sure to set it to 16M.  There is no error message for this but if you forget to change to 16M, it will not honor the partitions.csv and it won't be able to load the background pictures.  I changed to a T7 board with 4M and when I came back to the T-Display, I had trouble because I forgot to change it back to 16M.  Silly me!
 
 5. The first time it is run, it might take a while to get around to making a display.
    During this time, it is formatting the spiffs/littlefs partition to accept the LittleFS background pictures.

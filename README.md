@@ -1,5 +1,5 @@
 # T-Display-S3-Clock-with-Backgrounds
-This is a little clock for the TTGO T-Display S3 with multiple background pictures and memory dimming.
+This is a little clock for the TTGO T-Display S3 with multiple background pictures and memory dimming.  I have added outlining of the text for time and date so they are easier to read against some more colorful and/or brighter background images.
 
 I have learned a bit about installing this for the first time.  I had a friend do it and figured out I needed to add in these steps to help you get it right.  This is a slightly complicated install.  Take them, one at a time, in order.  Each step is easy.  Nothing really complicated.
 

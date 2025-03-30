@@ -13,7 +13,7 @@ void SetPic_Colors()
   //  Serial.print("Width = "); Serial.print(w); Serial.print(", height = ");
   //  Serial.println(h);
 
-//  BGPic = 14;  // Force a specific BG pic for testing something.
+  //  BGPic = 14;  // Force a specific BG pic for testing something.
 
   if (BGPic == 0) {
     if (prev_BGPic != BGPic)
@@ -33,18 +33,18 @@ void SetPic_Colors()
   else {
     if (prev_BGPic != BGPic) {
       Serial.printf("%02i:%02i:%02i Loading: ", iHour, iMinute, iSecond);
-      Serial.println(PixInfo[BGPic].picName);
+      Serial.println(pInfo[BGPic].picName);
     }
     // The callback knows where to put the picture.
     //  This just starts the process.
     // Load BG picture only.
-    JPB_RC = TJpgDec.drawFsJpg(0, 0, PixInfo[BGPic].picName, LittleFS);
-    if (JPB_RC != JDR_OK) Serial.println(PixInfo[BGPic].picName);
+    JPB_RC = TJpgDec.drawFsJpg(0, 0, pInfo[BGPic].picName, LittleFS);
+    if (JPB_RC != JDR_OK) Serial.println(pInfo[BGPic].picName);
 
     spriteTime.fillSprite(TFT_BLACK);
 
-    if (PixInfo[BGPic].tHatch) {
-      for (int i = 20; i < SPR_TIME_HEIGHT; i = i + 2) {
+    if (pInfo[BGPic].tHatch) {
+      for (int i = 18; i < SPR_TIME_HEIGHT; i = i + 2) {
         // Draw almost black lines across the time digits area.
         // I tried (1, 1, 1) but it seems to have considered it still to
         //  be hidden and drew nothing.
@@ -58,7 +58,7 @@ void SetPic_Colors()
 
     spriteDate.fillSprite(TFT_BLACK);
 
-    if (PixInfo[BGPic].dHatch) {
+    if (pInfo[BGPic].dHatch) {
       for (int i = 7; i < SPR_DATE_HEIGHT - 8; i = i + 2) {
         // Draw almost black lines across the time digits area.
         // I tried (1, 1, 1) but it seems to have considered it still to
@@ -74,10 +74,14 @@ void SetPic_Colors()
   prev_BGPic = BGPic;
 }
 /************** ****************************************************************************/
-void BuildAndShow()
+void BuildAndShow(bool doOutline)
 /*******************************************************************************************/
 {
-  // Show a background picture. Draw the image, top left at 0,0
+  // Show a background picture. Draw the image, top left at 0,0.  Then put in the text
+  //  fields with outlining except, as below.
+
+  // I found that there is just not enough time to service the buttons fast enough with
+  //  drawing in the outlining.  So, I turn off outlining for button presses to speed it up.
 
   //  BGPic = 66;  // Testing hatching
 
@@ -101,28 +105,67 @@ void BuildAndShow()
 
   ofr.setDrawer(spriteTime);
   ofr.setFontSize(SPR_TIME_FONT_SIZE);
-  ofr.setFontColor(PixInfo[BGPic].tColor, TFT_BLACK);  // spriteTime text colors
-  ofr.setCursor(0, 5);
   sprintf(chBuffer, "%02i:%02i:%02i", iHour, iMinute, iSecond);
+
+  int x = 3, y = 5;
+  if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
+    if (doOutline == DO_OUTLINE) {
+      ofr.setFontColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
+      // Diagonals
+      ofr.setCursor(x - 3, y - 3); ofr.printf(chBuffer);
+      ofr.setCursor(x + 3, y + 3); ofr.printf(chBuffer);
+      ofr.setCursor(x + 3, y - 3); ofr.printf(chBuffer);
+      ofr.setCursor(x - 3, y + 3); ofr.printf(chBuffer);
+      // Orthoginals
+      ofr.setCursor(x - 3, y); ofr.printf(chBuffer);
+      ofr.setCursor(x + 3, y); ofr.printf(chBuffer);
+      ofr.setCursor(x, y - 3); ofr.printf(chBuffer);
+      ofr.setCursor(x, y + 3); ofr.printf(chBuffer);
+    }
+  }
+  ofr.setFontColor(pInfo[BGPic].tColor, TFT_BLACK);  // spriteTime text colors
+  ofr.setCursor(x, y);
   ofr.printf(chBuffer);
-  spriteTime.pushToSprite(&spriteBG, 20, 38, TFT_BLACK);
+  if (ShowFields)
+    spriteTime.pushToSprite(&spriteBG, 20, 38, TFT_BLACK);
 
   // Create and draw the date sprite onto the background sprite.
-  // Leading zero supression for the day of monthmonth.
 
   nTemp = atoi(chDayOfMonth);
   if (nTemp < 10) sprintf(chDayOfMonth, "%2d", nTemp);
 
   // Update the date sprite
-  sprintf(chBuffer, "%s  %s %s, %i",
-          String(chDayofWeek), String(chMonth),
-          String(chDayOfMonth), iYear);
-  ofr.setDrawer(spriteDate);
-  ofr.setFontSize(SPR_DATE_FONT_SIZE);
-  ofr.setFontColor(PixInfo[BGPic].dColor, TFT_BLACK);  // spriteTime text colors
-  ofr.setCursor(tft.width() / 2 + 2, 0);
-  ofr.cprintf(chBuffer);
-  spriteDate.pushToSprite(&spriteBG, 0, 128, TFT_BLACK);
+  if (ShowFields) {
+    sprintf(chBuffer, "%s  %s %s, %i",
+            String(chDayofWeek), String(chMonth),
+            String(chDayOfMonth), iYear);
+    ofr.setDrawer(spriteDate);
+    ofr.setFontSize(SPR_DATE_FONT_SIZE);
+
+    x = tft.width() / 2 + 2; y = 0;
+    if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
+      if (doOutline == DO_OUTLINE) {
+        ofr.setFontColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
+        // Diagonals
+        ofr.setCursor(x - 2, y - 2); ofr.cprintf(chBuffer);
+        ofr.setCursor(x + 2, y + 2); ofr.cprintf(chBuffer);
+        ofr.setCursor(x + 2, y - 2); ofr.cprintf(chBuffer);
+        ofr.setCursor(x - 2, y + 2); ofr.cprintf(chBuffer);
+
+        // Orthoginals
+        ofr.setCursor(x - 2, y); ofr.cprintf(chBuffer);
+        ofr.setCursor(x + 2, y); ofr.cprintf(chBuffer);
+        ofr.setCursor(x, y - 2); ofr.cprintf(chBuffer);
+        ofr.setCursor(x, y + 2); ofr.cprintf(chBuffer);
+      }
+    }
+
+    ofr.setCursor(x, y);
+    ofr.setFontColor(pInfo[BGPic].dColor, TFT_BLACK);  // spriteTime text colors
+    ofr.cprintf(chBuffer);
+
+    spriteDate.pushToSprite(&spriteBG, 0, 128, TFT_BLACK);
+  }
 
   // Read the battery voltage.
 
@@ -130,18 +173,23 @@ void BuildAndShow()
 
   // Update the battery sprite.
   if (millis() > BLChangeMillis + BRIGHTNESS_SHOW_MILLIS) {
-    uVolt = (analogRead(4) * 2 * 3.3 * 1000) / 4096;
-    sprintf(chBuffer, "%.2f VDC", uVolt / 1000.);
+    if (showVolts) {
+      uVolt = (analogRead(4) * 2 * 3.3 * 1000) / 4096;
+      sprintf(chBuffer, "%.2f VDC", uVolt / 1000.);
+    } else {
+      chBuffer[0] = '\0';  // Clear it out.
+    }
   } else {
     sprintf(chBuffer, "Brightness: %i", tftBL_Lvl);
   }
   ofr.setDrawer(spriteBattBL);
   ofr.setFontSize(SPR_BATTERY_FONT_SIZE);
-  ofr.setFontColor(PixInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
+  ofr.setFontColor(pInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
   ofr.setCursor(0, 0);
   ofr.printf(chBuffer);
 
-  spriteBattBL.pushToSprite(&spriteBG, 4, 2, TFT_BLACK);
+  if (ShowFields)
+    spriteBattBL.pushToSprite(&spriteBG, 4, 2, TFT_BLACK);
   spriteBG.pushSprite(0, 0); spriteBG.fillSprite(TFT_BLACK);
   delay(1);
 }
@@ -167,8 +215,8 @@ void CheckButtons()
     ledcWrite(TFT_BL, tftBL_Lvl);
     //    Serial.printf("+tft brightness now %i\r\n", tftBL_Lvl);
     BLChangeMillis = millis();
-    BuildAndShow();
-    delay(150);
+    BuildAndShow(NO_OUTLINE);
+    delay(100);
   }
   while ((digitalRead(decrPin)) == 0 &&
          (tftBL_Lvl >= MIN_BRIGHTNESS))
@@ -186,8 +234,8 @@ void CheckButtons()
     ledcWrite(TFT_BL, tftBL_Lvl);
     //    Serial.printf("-tft brightness now %i\r\n", tftBL_Lvl);
     BLChangeMillis = millis();
-    BuildAndShow();
-    delay(150);
+    BuildAndShow(NO_OUTLINE);
+    delay(100);
   }
 }
 /*******************************************************************************************/
@@ -199,10 +247,17 @@ void GetCurrentTime()
   {
     // Time and date available, obtain hours, minutes and seconds.
     // Then obtain day of week, day of month, month and year.
+    //  time(&now);
+    //  if (now > 100000) {
+    // It is now taking more than 1/2 second to update the screen so I will fudge
+    //  one second to try to make up for it.
+    // now++;
+    // localtime_r(&now, &timeinfo);
+
     strftime(chDayofWeek, sizeof(chDayofWeek), "%A", &timeinfo);
     strftime(chDayOfMonth, sizeof(chDayOfMonth), "%d", &timeinfo);
     strftime(chMonth, sizeof(chMonth), "%B", &timeinfo);
-    // Get the big 3 in integer format, too.
+    // Get the big 6 in integer format, too.
     iDOM    = timeinfo.tm_mday;
     iDOW    = timeinfo.tm_wday;   // Watch out: days since Sunday (0-6)
     iMonth  = timeinfo.tm_mon;    // Watch out: months since January (0-11)
@@ -212,12 +267,13 @@ void GetCurrentTime()
     iSecond = timeinfo.tm_sec;
   } else {  // No joy getting time.  See what can be done.
     Serial.println("Time not available.");
-    delay(5000);  // A short rest then retry.
+    delay(5000);  // A short rest then restart sNTP.
+    Serial.println("Restarting sNTP service.");
     sntp_restart();
     delay(5000);  // A short rest then retry.
     if (!getLocalTime(&timeinfo)) {  // Still no joy.  Wait then reboot.
       delay(30000);
-      ESP.restart();
+      if (!getLocalTime(&timeinfo)) ESP.restart();  // Still bad?  Reboot!
     }
   }
 }
@@ -256,15 +312,20 @@ void setHourBrightness()
   Serial.printf("Read brightness level for hour %i of %i\r\n",
                 iHour, tftBL_Lvl);
   preferences.end();
-  if ((iHour >= 23 || iHour < 10) && tftBL_Lvl == 1000)
-    tftBL_Lvl = 0;
+
+  if (WakeupHour > SleepHour)
+    WakeUp = (iHour >= WakeupHour || iHour <= SleepHour);
+  else
+    WakeUp = (iHour >= WakeupHour && iHour <= SleepHour);
+
+  if (!WakeUp) tftBL_Lvl = 0;
   if (tftBL_Lvl == 1000) tftBL_Lvl = defaultBright;
   ledcWrite(TFT_BL, tftBL_Lvl);  // Activate whatever was decided on.
-  Serial.printf("Brightness level for hour %i set to %i\r\n", iHour, tftBL_Lvl);
-
+  Serial.printf("%02i:%02i:%02i - Brightness level for hour %i set to %i\r\n",
+                iHour, iMinute, iSecond, iHour, tftBL_Lvl);
 }
 /*******************************************************************************************/
-void SaveBrightness()
+void SaveOptions()
 /*******************************************************************************************/
 {
   // On the modulo 10 minute plus 10 seconds, see if saving the brightness
@@ -278,6 +339,15 @@ void SaveBrightness()
       preferences.putInt(chHour, tftBL_Lvl);
       Serial.printf("%02i:%02i:%02i - Saved BL level for hour %2i: %i\r\n",
                     iHour, iMinute, iSecond, iHour, tftBL_Lvl);
+    }
+    preferences.end();
+
+    preferences.begin("UserPrefs", RW_MODE);
+    bool bTemp = preferences.getBool("showVolts", false);
+    if (bTemp != showVolts) {
+      preferences.putBool("showVolts", showVolts);
+      Serial.printf("%02i:%02i:%02i - Saved new showVolts setting: %s.\r\n",
+                    iHour, iMinute, iSecond, showVolts ? "true" : "false");
     }
     preferences.end();
   }
@@ -424,4 +494,31 @@ void drawGreenGraphic()
                       RGB565(0, 255 - int(i * 2.5), 0));
   }
   //  ofr.setFontColor(TFT_RED, TFT_BLACK);
+}
+/*******************************************************************************************/
+void showInputOptions()
+/*******************************************************************************************/
+{
+  Serial.println("\r\nEnter B or b to toggle battery usage state (full or partial).");
+  Serial.println("Enter F or f to toggle showing time/date/battery fields.");
+  Serial.println("Enter P or p for the name of the current BG Pic.");
+  Serial.println("Enter V or v to toggle battery voltage display on and off.");
+  Serial.println("Enter ? for this list.");
+  Serial.println("Upper or Lower case OK.");
+}
+/*******************************************************************************************/
+void drawOutlinedText(int x, int y, String text, uint16_t textColor, uint16_t outlineColor)
+/*******************************************************************************************/
+{
+  tft.setTextSize(2); // Adjust text size as needed
+  // Draw outline
+  tft.setTextColor(outlineColor);
+  tft.drawString(text, x - 1, y);
+  tft.drawString(text, x + 1, y);
+  tft.drawString(text, x, y - 1);
+  tft.drawString(text, x, y + 1);
+
+  // Draw main text
+  tft.setTextColor(textColor);
+  tft.drawString(text, x, y);
 }

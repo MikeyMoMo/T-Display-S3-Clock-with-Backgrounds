@@ -37,3 +37,5 @@ int myOrientation = ORIENT_POWER_LEFT;
 #define MAX_BRIGHTNESS  252  // T-Display-S3 display brightness maximum.
 // The minimum brightness that the button will allow.
 #define MIN_BRIGHTNESS  0    // T-Display-S3 display brightness minimum.
+
+#define MENU_HIDE_TIME 15000  // With no button press, menu will disappear in this many ms.

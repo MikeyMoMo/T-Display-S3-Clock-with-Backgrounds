@@ -103,32 +103,28 @@ void BuildAndShow(bool doOutline)
       work.  Time for bed!
   */
 
-  ofr.setDrawer(spriteTime);
-  ofr.setFontSize(SPR_TIME_FONT_SIZE);
-  sprintf(chBuffer, "%02i:%02i:%02i", iHour, iMinute, iSecond);
-
   int x = 3, y = 5;
-  if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
-    if (doOutline == DO_OUTLINE) {
-      ofr.setFontColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
-      // Diagonals
-      ofr.setCursor(x - 3, y - 3); ofr.printf(chBuffer);
-      ofr.setCursor(x + 3, y + 3); ofr.printf(chBuffer);
-      ofr.setCursor(x + 3, y - 3); ofr.printf(chBuffer);
-      ofr.setCursor(x - 3, y + 3); ofr.printf(chBuffer);
-      // Orthoginals
-      ofr.setCursor(x - 3, y); ofr.printf(chBuffer);
-      ofr.setCursor(x + 3, y); ofr.printf(chBuffer);
-      ofr.setCursor(x, y - 3); ofr.printf(chBuffer);
-      ofr.setCursor(x, y + 3); ofr.printf(chBuffer);
+  if (ShowFields) {
+    sprintf(chBuffer, "%02i:%02i:%02i", iHour, iMinute, iSecond);
+    if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
+      if (doOutline == DO_OUTLINE) {
+        spriteTime.setTextColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
+        // Diagonals
+        spriteTime.drawString(chBuffer, x - 2, y - 2);
+        spriteTime.drawString(chBuffer, x + 2, y + 2);
+        spriteTime.drawString(chBuffer, x + 2, y - 2);
+        spriteTime.drawString(chBuffer, x - 2, y + 2);
+        // Orthoginals
+        spriteTime.drawString(chBuffer, x - 2, y);
+        spriteTime.drawString(chBuffer, x + 2, y);
+        spriteTime.drawString(chBuffer, x, y - 2);
+        spriteTime.drawString(chBuffer, x, y + 2);
+      }
     }
+    spriteTime.setTextColor(pInfo[BGPic].tColor, TFT_BLACK);  // Load up the outline color.
+    spriteTime.drawString(chBuffer, x, y);
+    spriteTime.pushToSprite(&spriteBG, 18, 52, TFT_BLACK);
   }
-  ofr.setFontColor(pInfo[BGPic].tColor, TFT_BLACK);  // spriteTime text colors
-  ofr.setCursor(x, y);
-  ofr.printf(chBuffer);
-  if (ShowFields)
-    spriteTime.pushToSprite(&spriteBG, 20, 38, TFT_BLACK);
-
   // Create and draw the date sprite onto the background sprite.
 
   nTemp = atoi(chDayOfMonth);
@@ -142,29 +138,26 @@ void BuildAndShow(bool doOutline)
     ofr.setDrawer(spriteDate);
     ofr.setFontSize(SPR_DATE_FONT_SIZE);
 
-    x = tft.width() / 2 + 2; y = 0;
+    x = 18; y = 3;
     if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
       if (doOutline == DO_OUTLINE) {
-        ofr.setFontColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
+        //        ofr.setFontColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
+        spriteDate.setTextColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
         // Diagonals
-        ofr.setCursor(x - 2, y - 2); ofr.cprintf(chBuffer);
-        ofr.setCursor(x + 2, y + 2); ofr.cprintf(chBuffer);
-        ofr.setCursor(x + 2, y - 2); ofr.cprintf(chBuffer);
-        ofr.setCursor(x - 2, y + 2); ofr.cprintf(chBuffer);
-
+        spriteDate.drawString(chBuffer, x - 2, y - 2);
+        spriteDate.drawString(chBuffer, x + 2, y + 2);
+        spriteDate.drawString(chBuffer, x + 2, y - 2);
+        spriteDate.drawString(chBuffer, x - 2, y + 2);
         // Orthoginals
-        ofr.setCursor(x - 2, y); ofr.cprintf(chBuffer);
-        ofr.setCursor(x + 2, y); ofr.cprintf(chBuffer);
-        ofr.setCursor(x, y - 2); ofr.cprintf(chBuffer);
-        ofr.setCursor(x, y + 2); ofr.cprintf(chBuffer);
+        spriteDate.drawString(chBuffer, x - 2, y);
+        spriteDate.drawString(chBuffer, x + 2, y);
+        spriteDate.drawString(chBuffer, x, y - 2);
+        spriteDate.drawString(chBuffer, x, y + 2);
       }
     }
-
-    ofr.setCursor(x, y);
-    ofr.setFontColor(pInfo[BGPic].dColor, TFT_BLACK);  // spriteTime text colors
-    ofr.cprintf(chBuffer);
-
-    spriteDate.pushToSprite(&spriteBG, 0, 128, TFT_BLACK);
+    spriteDate.setTextColor(pInfo[BGPic].dColor, TFT_BLACK);  // Load up the outline color.
+    spriteDate.drawString(chBuffer, x, y);
+    spriteDate.pushToSprite(&spriteBG, 20, 128, TFT_BLACK);
   }
 
   // Read the battery voltage.
@@ -194,14 +187,137 @@ void BuildAndShow(bool doOutline)
   delay(1);
 }
 /*******************************************************************************************/
+void doMenu()
+/*******************************************************************************************/
+{
+  int highlight = 1;
+  //  Serial.printf("%lu - In menuing.\r\n", millis());
+
+  tft.fillScreen(TFT_BLACK);
+
+  // Now, wait for unpress of both buttons.
+  while ((digitalRead(incrPin) == 0) || (digitalRead(decrPin) == 0));
+  //  {
+  //    Serial.println("Waiting for both buttons to be not pressed.");
+  //  }
+
+  menuHide = millis() + MENU_HIDE_TIME;
+
+  while (millis() < menuHide) {
+    spriteMenu.fillSprite(TFT_BLACK);
+    if (highlight == 1)
+      spriteMenu.setTextColor(TFT_BLACK, TFT_YELLOW);
+    else
+      spriteMenu.setTextColor(TFT_YELLOW, TFT_BLACK);
+    spriteMenu.drawString("Toggle Battery Usage", 0, 10, 4);
+    spriteMenu.drawFastHLine(0, SPR_MENU_HEIGHT - 1, tft.width(), TFT_YELLOW);
+    spriteMenu.pushSprite(0, 10);
+
+    spriteMenu.fillSprite(TFT_BLACK);
+    if (highlight == 2)
+      spriteMenu.setTextColor(TFT_BLACK, TFT_YELLOW);
+    else
+      spriteMenu.setTextColor(TFT_YELLOW, TFT_BLACK);
+    spriteMenu.drawString("Toggle All Fields", 0, 10, 4);
+    spriteMenu.drawFastHLine(0, SPR_MENU_HEIGHT - 1, tft.width(), TFT_YELLOW);
+    spriteMenu.pushSprite(0, 50);
+
+    spriteMenu.fillSprite(TFT_BLACK);
+    if (highlight == 3)
+      spriteMenu.setTextColor(TFT_BLACK, TFT_YELLOW);
+    else
+      spriteMenu.setTextColor(TFT_YELLOW, TFT_BLACK);
+    spriteMenu.drawString("Toggle Battery Field", 0, 10, 4);
+    spriteMenu.drawFastHLine(0, SPR_MENU_HEIGHT - 1, tft.width(), TFT_YELLOW);
+    spriteMenu.pushSprite(0, 90);
+
+    spriteMenu.fillSprite(TFT_BLACK);
+    if (highlight == 4)
+      spriteMenu.setTextColor(TFT_BLACK, TFT_YELLOW);
+    else
+      spriteMenu.setTextColor(TFT_YELLOW, TFT_BLACK);
+    spriteMenu.drawString("Return to Clock", 0, 10, 4);
+    spriteMenu.drawFastHLine(0, SPR_MENU_HEIGHT - 1, tft.width(), TFT_YELLOW);
+    spriteMenu.pushSprite(0, 130);
+
+    // Select item
+    if (digitalRead(decrPin) == 0) {  // Bottom button pressed.
+      delay(50);
+      if (digitalRead(decrPin) == 0) {  // Still pressed?
+        highlight++; if (highlight > 4) highlight = 1;
+        menuHide = millis() + MENU_HIDE_TIME;  // Extend auto close time.
+      }
+      while (digitalRead(decrPin) == 0);  // Wait for unpress to avoid multiple actions.
+    }
+
+    // Execute selected
+    if (digitalRead(incrPin) == 0) {  // Bottom button pressed.
+      delay(50);
+      if (digitalRead(incrPin) == 0) {  // Still pressed?
+        switch (highlight)
+        {
+          case 1:  // case 'B':
+            dRead = digitalRead(15);
+            if (dRead == 0) {
+              digitalWrite(15, 1);
+              Serial.println("Battery usage state set to full power. There is no off state.");
+            } else {
+              digitalWrite(15, 0);
+              Serial.println("Battery usage state set to partial power. There is no off state.");
+            }
+            while ((digitalRead(incrPin) == 0) || (digitalRead(decrPin) == 0));
+            return;
+            break;
+
+          case 2:  // case 'F':
+            ShowFields = !ShowFields;
+            Serial.printf("Fields will%s be shown.\r\n", ShowFields ? "" : " not");
+            while ((digitalRead(incrPin) == 0) || (digitalRead(decrPin) == 0));
+            return;
+            break;
+
+          case 3:  // case 'V':
+            showVolts = !showVolts;
+            if (showVolts)
+              Serial.println("Battery voltage will be shown.");
+            else
+              Serial.println("Battery voltage will not be shown.");
+            showInputOptions();
+            while ((digitalRead(incrPin) == 0) || (digitalRead(decrPin) == 0));
+            return;
+            break;
+
+          case 4:  // Return to clock
+            while ((digitalRead(incrPin) == 0) || (digitalRead(decrPin) == 0));
+            return;
+        }
+      }
+      menuHide = millis() + MENU_HIDE_TIME;  // Extend auto close time.
+    }
+  }
+}
+/*******************************************************************************************/
 void CheckButtons()
 /*******************************************************************************************/
 {
   int pressLength = 0;
+
+  if ((digitalRead(incrPin) == 0) && (digitalRead(decrPin) == 0)) {
+    //    Serial.printf("%lu - 1 Both pressed, do menuing.\r\n", millis());
+    doMenu();
+    return;
+  }
+
   // Allow the user to adjust backlight brightness.
   while ((digitalRead(incrPin) == 0) &&
          (tftBL_Lvl <= MAX_BRIGHTNESS))
   {
+
+    if (digitalRead(decrPin) == 0) {
+      //      Serial.printf("%lu - 2 Both pressed, do menuing.\r\n", millis());
+      return;
+    }
+
     // Increase.
     pressLength++;
     if (pressLength > 10) BLchange = 8;
@@ -221,6 +337,12 @@ void CheckButtons()
   while ((digitalRead(decrPin)) == 0 &&
          (tftBL_Lvl >= MIN_BRIGHTNESS))
   {
+    if (digitalRead(incrPin) == 0) {
+      //      Serial.printf("%lu - 3 Both pressed, do menuing.\r\n", millis());
+      doMenu();
+      return;
+    }
+
     // Decrease.
     pressLength++;
     if (pressLength > 10) BLchange = 8;
@@ -289,8 +411,8 @@ void HourDance()
     tft.invertDisplay(true); delay(200);
   }
   setHourBrightness();
-  Serial.printf("Hourdance derived brightness level for hour %i of %i\r\n",
-                iHour, tftBL_Lvl);
+  //  Serial.printf("Hourdance derived brightness level for hour %i of %i\r\n",
+  //                iHour, tftBL_Lvl);
 }
 /*******************************************************************************************/
 void setHourBrightness()
@@ -369,7 +491,7 @@ void initTime()
   strftime(chBuffer, sizeof(chBuffer), "%Y", localtime(&UTC));
   iYear = atoi(chBuffer);
   int iLooper = 0;
-  while (iYear < 2024) {
+  while (iYear < 2025) {
     Serial.print(".");
     time(&UTC);
     strftime (chBuffer, 100, "%Y", localtime(&UTC));
@@ -503,8 +625,7 @@ void showInputOptions()
   Serial.println("Enter F or f to toggle showing time/date/battery fields.");
   Serial.println("Enter P or p for the name of the current BG Pic.");
   Serial.println("Enter V or v to toggle battery voltage display on and off.");
-  Serial.println("Enter ? for this list.");
-  Serial.println("Upper or Lower case OK.");
+  Serial.println("Enter ? for this list.  Upper or Lower case OK.\r\n");
 }
 /*******************************************************************************************/
 void drawOutlinedText(int x, int y, String text, uint16_t textColor, uint16_t outlineColor)

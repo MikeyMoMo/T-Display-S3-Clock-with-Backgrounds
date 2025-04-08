@@ -325,7 +325,7 @@ void CheckButtons()
     else BLchange = 2;
     tftBL_Lvl += BLchange;
 
-    if (tftBL_Lvl > MAX_BRIGHTNESS)
+    if (tftBL_Lvl > 9)
       tftBL_Lvl = MAX_BRIGHTNESS;
 
     ledcWrite(TFT_BL, tftBL_Lvl);
@@ -626,20 +626,4 @@ void showInputOptions()
   Serial.println("Enter P or p for the name of the current BG Pic.");
   Serial.println("Enter V or v to toggle battery voltage display on and off.");
   Serial.println("Enter ? for this list.  Upper or Lower case OK.\r\n");
-}
-/*******************************************************************************************/
-void drawOutlinedText(int x, int y, String text, uint16_t textColor, uint16_t outlineColor)
-/*******************************************************************************************/
-{
-  tft.setTextSize(2); // Adjust text size as needed
-  // Draw outline
-  tft.setTextColor(outlineColor);
-  tft.drawString(text, x - 1, y);
-  tft.drawString(text, x + 1, y);
-  tft.drawString(text, x, y - 1);
-  tft.drawString(text, x, y + 1);
-
-  // Draw main text
-  tft.setTextColor(textColor);
-  tft.drawString(text, x, y);
 }

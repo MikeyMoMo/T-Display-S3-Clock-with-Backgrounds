@@ -192,9 +192,10 @@ void setup()
   Serial.begin(115200); delay(5000);
   Serial.println("This is T-Display S3 Visual Clock, running from:");
   Serial.println(__FILE__);
+  Serial.println("For the T-Display S3 target board, use tft_espi config# 206");
 
   // Analog.
-  analogReadResolution(12);
+  analogReadResolution(12);  // For battery voltage reading.
 
   // Initialise LittleFS
   Serial.println("Initializing LittleFS.");
@@ -229,8 +230,6 @@ void setup()
   Serial.printf("LittleFS Used Bytes:  %u\r\n", LittleFS.usedBytes());
   Serial.printf("LittleFS Free Bytes:  %u\r\n",
                 LittleFS.totalBytes() - LittleFS.usedBytes());
-  Serial.printf("There are %i jpg pictures in use + 3 digital graphics.\r\n",
-                pixInLittleFS);
 
   tft.init();  // Init the display.  What else?
 
@@ -314,6 +313,8 @@ void setup()
   //  so that has to be accounted for in the following statement.  BGPic is really the
   //  sum of the number of pix plus the 3 graphics for the random selection to be able
   //  to pick from all available backgrounds.
+  Serial.printf("There are %i jpg pictures in use + 3 digital graphics.\r\n",
+                pixInLittleFS);
   Serial.printf("I loaded %i pictures into the table + 3 Digital Graphics.\r\n", BGPic - 3);
 
   // Start WiFi.
@@ -402,7 +403,7 @@ void loop()
       case '\n':  // Ignore
         break;
       default:
-        Serial.println("Unknown input!");  // Handle unknown input
+        Serial.printf("Unknown input %s!", input);  // Handle unknown input
         showInputOptions();
         break;
     }

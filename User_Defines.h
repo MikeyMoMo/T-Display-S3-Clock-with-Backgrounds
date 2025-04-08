@@ -34,7 +34,7 @@ int SleepHour = 23;  // Default turn off display time
 int myOrientation = ORIENT_POWER_LEFT;
 
 // The maximum brightness that the button will allow.
-#define MAX_BRIGHTNESS  252  // T-Display-S3 display brightness maximum.
+#define MAX_BRIGHTNESS  255  // T-Display-S3 display brightness maximum.
 // The minimum brightness that the button will allow.
 #define MIN_BRIGHTNESS  0    // T-Display-S3 display brightness minimum.
 

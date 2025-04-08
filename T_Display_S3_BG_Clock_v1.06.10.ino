@@ -403,7 +403,7 @@ void loop()
       case '\n':  // Ignore
         break;
       default:
-        Serial.printf("Unknown input %s!", input);  // Handle unknown input
+        Serial.printf("Unknown input \'%c\'!", input);  // Handle unknown input
         showInputOptions();
         break;
     }

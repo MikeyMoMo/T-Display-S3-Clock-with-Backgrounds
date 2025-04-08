@@ -368,12 +368,15 @@ void loop()
 {
   startMillis = millis();
 
-  if (Serial.available() > 0) { // Check if data is available to read
+  while (Serial.available() > 0) { // Check if data is available to read
     char input = Serial.read(); // Read one character from the serial input
     input = toupper(input); // Convert the character to uppercase
+    //    Serial.print("Received char: "); Serial.println(input); Serial.flush();
     switch (input) {
       case 'P':
         Serial.print("Picture showing is: ");
+        Serial.printf("Loaded pic %i\r\n:", BGPic);
+        Serial.flush();
         Serial.print(pInfo[BGPic].picName);
         Serial.printf(", with brightness of %i/255.\r\n", tftBL_Lvl);
         showInputOptions();
@@ -399,11 +402,16 @@ void loop()
         ShowFields = !ShowFields;
         Serial.printf("Fields will%s be shown.\r\n", ShowFields ? "" : " not");
         break;
+      case '?':
+        showInputOptions();
+        break;
       case '\r':  // Ignore
       case '\n':  // Ignore
         break;
       default:
         Serial.printf("Unknown input \'%c\'!", input);  // Handle unknown input
+        //        Serial.print("Unknown input ");  // Handle unknown input
+        //        Serial.println(input);
         showInputOptions();
         break;
     }

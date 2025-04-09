@@ -325,7 +325,7 @@ void CheckButtons()
     else BLchange = 2;
     tftBL_Lvl += BLchange;
 
-    if (tftBL_Lvl > 9)
+    if (tftBL_Lvl > MAX_BRIGHTNESS)
       tftBL_Lvl = MAX_BRIGHTNESS;
 
     ledcWrite(TFT_BL, tftBL_Lvl);

@@ -469,7 +469,7 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -949,7 +949,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_CYAN;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
@@ -1409,7 +1409,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;;  // RGB565(255, 50, 25);
+  pInfo[BGPic].bColor = TFT_CYAN;  // RGB565(255, 50, 25);
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -2169,7 +2169,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -2219,8 +2219,8 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_GREEN;
+  pInfo[BGPic].bColor = TFT_RED;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_BLUE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
 }

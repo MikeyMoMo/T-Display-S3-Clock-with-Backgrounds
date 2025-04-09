@@ -135,8 +135,8 @@ void BuildAndShow(bool doOutline)
     sprintf(chBuffer, "%s  %s %s, %i",
             String(chDayofWeek), String(chMonth),
             String(chDayOfMonth), iYear);
-    ofr.setDrawer(spriteDate);
-    ofr.setFontSize(SPR_DATE_FONT_SIZE);
+    //    ofr.setDrawer(spriteDate);
+    //    ofr.setFontSize(SPR_DATE_FONT_SIZE);
 
     x = 18; y = 3;
     if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
@@ -162,27 +162,29 @@ void BuildAndShow(bool doOutline)
 
   // Read the battery voltage.
 
-  spriteBattBL.fillSprite(TFT_BLACK);
+  if (ShowFields) {
+    spriteBattBL.fillSprite(TFT_BLACK);
 
-  // Update the battery sprite.
-  if (millis() > BLChangeMillis + BRIGHTNESS_SHOW_MILLIS) {
-    if (showVolts) {
-      uVolt = (analogRead(4) * 2 * 3.3 * 1000) / 4096;
-      sprintf(chBuffer, "%.2f VDC", uVolt / 1000.);
+    // Update the battery sprite.
+    if (millis() > BLChangeMillis + BRIGHTNESS_SHOW_MILLIS) {
+      if (showVolts) {
+        uVolt = (analogRead(4) * 2 * 3.3 * 1000) / 4096;
+        sprintf(chBuffer, "%.2f VDC", uVolt / 1000.);
+      } else {
+        chBuffer[0] = '\0';  // Clear it out.
+      }
     } else {
-      chBuffer[0] = '\0';  // Clear it out.
+      sprintf(chBuffer, "Brightness: %i", tftBL_Lvl);
     }
-  } else {
-    sprintf(chBuffer, "Brightness: %i", tftBL_Lvl);
-  }
-  ofr.setDrawer(spriteBattBL);
-  ofr.setFontSize(SPR_BATTERY_FONT_SIZE);
-  ofr.setFontColor(pInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
-  ofr.setCursor(0, 0);
-  ofr.printf(chBuffer);
-
-  if (ShowFields)
+    //  ofr.setDrawer(spriteBattBL);
+    //  ofr.setFontSize(SPR_BATTERY_FONT_SIZE);
+    //  ofr.setFontColor(pInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
+    spriteBattBL.setTextColor(pInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
+    //  ofr.setCursor(0, 0);
+    //  ofr.printf(chBuffer);
+    spriteBattBL.drawString(chBuffer, 0, 0);
     spriteBattBL.pushToSprite(&spriteBG, 4, 2, TFT_BLACK);
+  }
   spriteBG.pushSprite(0, 0); spriteBG.fillSprite(TFT_BLACK);
   delay(1);
 }
@@ -325,7 +327,7 @@ void CheckButtons()
     else BLchange = 2;
     tftBL_Lvl += BLchange;
 
-    if (tftBL_Lvl > MAX_BRIGHTNESS)
+    if (tftBL_Lvl > 255)
       tftBL_Lvl = MAX_BRIGHTNESS;
 
     ledcWrite(TFT_BL, tftBL_Lvl);

@@ -169,6 +169,7 @@ JRESULT     JPB_RC;                          // Return code from drawing BG pic.
 uint16_t    w = 0, h = 0;
 bool        displayOn = true;
 bool        WakeUp;
+bool        displayInverted = true;         // Just a little test.
 bool        ShowFields = true;
 time_t      workTime, UTC, startMillis, BLChangeMillis = 0;
 time_t      menuHide;
@@ -332,12 +333,21 @@ void setup()
     delay(500);
     Serial.print(".");
   }
+
   // Connected.
+  tft.fillScreen(TFT_BLACK);
   stringIP = WiFi.localIP().toString();
   Serial.printf("\nWiFi connected to %s at %s\r\n", chSsid, stringIP);
-  tft.fillScreen(TFT_BLACK);
   tft.drawString("WiFi connected to:", 0, 0, 4);
   tft.drawString(stringIP, 0, 30, 4);
+
+  stringIP = WiFi.gatewayIP().toString();
+  Serial.printf("WiFi Gateway IP %s\r\n", stringIP);
+  stringIP = WiFi.dnsIP(0).toString();
+  Serial.printf("WiFi DNS #1 %s\r\n", stringIP);
+  stringIP = WiFi.dnsIP(1).toString();
+  Serial.printf("WiFi DNS #2 %s\r\n", stringIP);
+
   delay(2000);
 
   // Time.
@@ -377,40 +387,53 @@ void loop()
     //    Serial.print("Received char: "); Serial.println(input); Serial.flush();
     switch (input) {
       case 'P':
-        Serial.print("Picture showing is: ");
+        Serial.print("\r\nPicture showing is: ");
         Serial.print(pInfo[BGPic].picName);
         Serial.printf(", with brightness of %i/255.\r\n", tftBL_Lvl);
         showInputOptions();
         break;
       case 'V':
         showVolts = !showVolts;
-        if (showVolts)
-          Serial.println("Battery voltage will be shown.");
-        else
-          Serial.println("Battery voltage will not be shown.");
+        Serial.printf("\r\Battery voltage will%s be shown.\r\n", showVolts ? "" : " not");
+        // if (showVolts)
+        //   Serial.println("\r\nBattery voltage will be shown.");
+        // else
+        //   Serial.println("\r\nBattery voltage will not be shown.");
         showInputOptions();
         break;
       case 'B':
         dRead = digitalRead(15);
         if (dRead == 0) {
           digitalWrite(15, 1);
-          Serial.println("Battery usage state set to full power. There is no off state.");
+          Serial.println("\r\nBattery usage state set to full power. There is no off state.");
         } else {
           digitalWrite(15, 0);
-          Serial.println("Battery usage state set to partial power. There is no off state.");
+          Serial.println("\r\nBattery usage state set to partial power. There is no off state.");
         }
+        showInputOptions();
+        break;
       case 'F':
         ShowFields = !ShowFields;
-        Serial.printf("Fields will%s be shown.\r\n", ShowFields ? "" : " not");
+        Serial.printf("\r\nFields will%s be shown.\r\n", ShowFields ? "" : " not");
+        showInputOptions();
         break;
       case '?':
         showInputOptions();
+        break;
+      case 'I':
+        if (displayInverted) {
+          tft.invertDisplay(false);
+          displayInverted = false;
+        } else {
+          tft.invertDisplay(true);
+          displayInverted = true;
+        }
         break;    // Optional here. Included for completeness.
       case '\r':  // Ignore
       case '\n':  // Ignore
         break;
       default:
-        Serial.printf("Unknown input \'%c\'!", input);  // Handle unknown input
+        Serial.printf("\r\nUnknown input \'%c\'!", input);  // Handle unknown input
         //        Serial.print("Unknown input ");  // Handle unknown input
         //        Serial.println(input);
         showInputOptions();

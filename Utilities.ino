@@ -17,22 +17,22 @@ void SetPic_Colors()
 
   if (BGPic == 0) {
     if (prev_BGPic != BGPic)
-      Serial.printf("%02i:%02i:%02i Showing Red Graphic\r\n", iHour, iMinute, iSecond);
+      Serial.printf("%02i:%02i:%02i Showing #000: Red Graphic\r\n", iHour, iMinute, iSecond);
     drawRedGraphic();
   }
   else if (BGPic == 1) {
     if (prev_BGPic != BGPic)
-      Serial.printf("%02i:%02i:%02i Showing Blue Graphic\r\n", iHour, iMinute, iSecond);
+      Serial.printf("%02i:%02i:%02i Showing #001: Blue Graphic\r\n", iHour, iMinute, iSecond);
     drawBlueGraphic();
   }
   else if (BGPic == 2) {
     if (prev_BGPic != BGPic)
-      Serial.printf("%02i:%02i:%02i Showing Green Graphic\r\n", iHour, iMinute, iSecond);
+      Serial.printf("%02i:%02i:%02i Showing #002: Green Graphic\r\n", iHour, iMinute, iSecond);
     drawGreenGraphic();
   }
   else {
     if (prev_BGPic != BGPic) {
-      Serial.printf("%02i:%02i:%02i Loading: ", iHour, iMinute, iSecond);
+      Serial.printf("%02i:%02i:%02i Loading #%03i: ", iHour, iMinute, iSecond, BGPic);
       Serial.println(pInfo[BGPic].picName);
     }
     // The callback knows where to put the picture.
@@ -135,13 +135,10 @@ void BuildAndShow(bool doOutline)
     sprintf(chBuffer, "%s  %s %s, %i",
             String(chDayofWeek), String(chMonth),
             String(chDayOfMonth), iYear);
-    //    ofr.setDrawer(spriteDate);
-    //    ofr.setFontSize(SPR_DATE_FONT_SIZE);
 
-    x = 18; y = 3;
+    x = 5; y = 3;
     if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
       if (doOutline == DO_OUTLINE) {
-        //        ofr.setFontColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
         spriteDate.setTextColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
         // Diagonals
         spriteDate.drawString(chBuffer, x - 2, y - 2);
@@ -157,7 +154,7 @@ void BuildAndShow(bool doOutline)
     }
     spriteDate.setTextColor(pInfo[BGPic].dColor, TFT_BLACK);  // Load up the outline color.
     spriteDate.drawString(chBuffer, x, y);
-    spriteDate.pushToSprite(&spriteBG, 20, 128, TFT_BLACK);
+    spriteDate.pushToSprite(&spriteBG, 14, 128, TFT_BLACK);
   }
 
   // Read the battery voltage.
@@ -169,6 +166,19 @@ void BuildAndShow(bool doOutline)
     if (millis() > BLChangeMillis + BRIGHTNESS_SHOW_MILLIS) {
       if (showVolts) {
         uVolt = (analogRead(4) * 2 * 3.3 * 1000) / 4096;
+        // Move existing ones left by 1
+        int iVoltAvg = 0;
+        for (int i = 0; i < VOLT_AVG_CT - 1; i++) {
+          iVoltHist[i] = iVoltHist[i + 1];
+          iVoltAvg += iVoltHist[i];
+        }
+        iVoltHist[VOLT_AVG_CT - 1] = uVolt; // Remember current sample
+        iVoltAvg += uVolt;  // Add current sample
+        voltSamples++;      // Count this sample
+        if (voltSamples >= VOLT_AVG_CT) voltSamples = VOLT_AVG_CT;
+        iVoltAvg /= voltSamples;
+        // Serial.printf("Voltage total %i, Samples %i\r\n", iVoltAvg, voltSamples);
+        uVolt = iVoltAvg;
         sprintf(chBuffer, "%.2f VDC", uVolt / 1000.);
       } else {
         chBuffer[0] = '\0';  // Clear it out.
@@ -176,12 +186,7 @@ void BuildAndShow(bool doOutline)
     } else {
       sprintf(chBuffer, "Brightness: %i", tftBL_Lvl);
     }
-    //  ofr.setDrawer(spriteBattBL);
-    //  ofr.setFontSize(SPR_BATTERY_FONT_SIZE);
-    //  ofr.setFontColor(pInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
     spriteBattBL.setTextColor(pInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
-    //  ofr.setCursor(0, 0);
-    //  ofr.printf(chBuffer);
     spriteBattBL.drawString(chBuffer, 0, 0);
     spriteBattBL.pushToSprite(&spriteBG, 4, 2, TFT_BLACK);
   }
@@ -314,9 +319,8 @@ void CheckButtons()
   while ((digitalRead(incrPin) == 0) &&
          (tftBL_Lvl <= MAX_BRIGHTNESS))
   {
-
     if (digitalRead(decrPin) == 0) {
-      //      Serial.printf("%lu - 2 Both pressed, do menuing.\r\n", millis());
+      doMenu();
       return;
     }
 
@@ -327,7 +331,7 @@ void CheckButtons()
     else BLchange = 2;
     tftBL_Lvl += BLchange;
 
-    if (tftBL_Lvl > 255)
+    if (tftBL_Lvl > MAX_BRIGHTNESS)
       tftBL_Lvl = MAX_BRIGHTNESS;
 
     ledcWrite(TFT_BL, tftBL_Lvl);
@@ -340,7 +344,6 @@ void CheckButtons()
          (tftBL_Lvl >= MIN_BRIGHTNESS))
   {
     if (digitalRead(incrPin) == 0) {
-      //      Serial.printf("%lu - 3 Both pressed, do menuing.\r\n", millis());
       doMenu();
       return;
     }
@@ -480,7 +483,8 @@ void SaveOptions()
 void initTime()
 /*******************************************************************************************/
 {
-  sntp_set_sync_interval(86405432);  // 1 day in ms plus a little.
+  sntp_set_sync_interval(21601358);  // Get updated time every 6 hours.
+  //  sntp_set_sync_interval(86405432);  // 1 day in ms plus a little.
   sntp_set_time_sync_notification_cb(timeSyncCallback);
   sntp_set_sync_mode(SNTP_SYNC_MODE_SMOOTH);
 #if defined CONFIG_FOR_JOE
@@ -555,7 +559,6 @@ void drawRedGraphic()
     spriteBG.drawRect(i, i, tft.width() - i * 2, tft.height() - i * 2,
                       RGB565(255 - int(i * 2.5), 0, 0));
   }
-  //  ofr.setFontColor(TFT_GREENYELLOW, TFT_BLACK);
 }
 /*******************************************************************************************/
 void drawBlueGraphic()
@@ -586,7 +589,6 @@ void drawBlueGraphic()
     spriteBG.drawRect(i, i, tft.width() - i * 2, tft.height() - i * 2,
                       RGB565(0, 0, 255 - int(i * 2.5)));
   }
-  //  ofr.setFontColor(TFT_GREENYELLOW, TFT_BLACK);
 }
 /*******************************************************************************************/
 void drawGreenGraphic()
@@ -617,7 +619,6 @@ void drawGreenGraphic()
     spriteBG.drawRect(i, i, tft.width() - i * 2, tft.height() - i * 2,
                       RGB565(0, 255 - int(i * 2.5), 0));
   }
-  //  ofr.setFontColor(TFT_RED, TFT_BLACK);
 }
 /*******************************************************************************************/
 void showInputOptions()

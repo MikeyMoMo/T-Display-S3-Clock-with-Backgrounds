@@ -31,21 +31,21 @@ bool spr_output(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t* bitmap)
 void FillPixArray()
 /*******************************************************************************************/
 {
-/* Note:
- *  I started to change this to a struct build and load in the global area so the compiler
- *   could take care of this task but it meant that I would then have to write a routine to
- *   check that all of the pictures were there and that is already here controlled by the
- *   variable veriPix.  So I will let this take a second and a half or 2 seconds each boot
- *   up.  Verifying all of the pix would probably take that long and is what probably makes
- *   this routine take that long because the little moves of values that are done here are
- *   really quick.  If I time test it some day, I will update this.  But I just decided to
- *   not take a lot of busywork time to change the format of this to allocate and load the
- *   struct and then have to check the files separately.  OK?  Thank you!
- *   
- *   P.S., The other reason is that I started it this way instead of loading the struct ovewr
- *         at the definition point and it is just too much eyestrain and brainstrain to
- *         change this over to the other way.  OK?  I'm done this time!
- */
+  /* Note:
+      I started to change this to a struct build and load in the global area so the compiler
+       could take care of this task but it meant that I would then have to write a routine to
+       check that all of the pictures were there and that is already here controlled by the
+       variable veriPix.  So I will let this take a second and a half or 2 seconds each boot
+       up.  Verifying all of the pix would probably take that long and is what probably makes
+       this routine take that long because the little moves of values that are done here are
+       really quick.  If I time test it some day, I will update this.  But I just decided to
+       not take a lot of busywork time to change the format of this to allocate and load the
+       struct and then have to check the files separately.  OK?  Thank you!
+
+       P.S., The other reason is that I started it this way instead of loading the struct ovewr
+             at the definition point and it is just too much eyestrain and brainstrain to
+             change this over to the other way.  OK?  I'm done this time!
+  */
   //struct picDef
   //{
   //  char picName[30];
@@ -84,7 +84,27 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(5, 5, 5);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/Aquarium.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/AICalm.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/AliceWonder.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
@@ -139,7 +159,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_CYAN;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -149,7 +169,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = RGB565(50, 255, 80);
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -199,7 +219,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = RGB565(255, 50, 25);
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -210,6 +230,16 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/BlueEyesCat.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -239,7 +269,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -332,7 +362,7 @@ void FillPixArray()
   pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/BlueWaterfall.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -349,7 +379,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = RGB565(5, 5, 5);
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -369,7 +399,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -419,7 +449,7 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -449,7 +479,7 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -469,7 +499,7 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -489,12 +519,42 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/CloudTops.jpg");
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/CNTMoon.jpg");
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/ColaBubbles.jpg");
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/ColaBubbles2.jpg");
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
@@ -584,6 +644,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/CosmosBubbles.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/Crimson.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -604,6 +674,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/CrystalFlower.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/Daisys.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -613,6 +693,46 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/DarkFlower.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/DarkLondon.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/DarkTrees.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/DataFlow.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/DeepBlue.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -639,12 +759,22 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_CYAN;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/DontKnow.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/DontKnow1.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
@@ -684,6 +814,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/FairyFlys.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/FallSunset.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -699,8 +839,18 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_RED;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/FireTown.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
@@ -709,7 +859,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = RGB565(255, 50, 25);
+  pInfo[BGPic].bColor = TFT_GREEN;
   pInfo[BGPic].tColor = TFT_GREEN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREEN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -723,6 +873,16 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/FloatingDirt.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/FlowerWheel.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -759,7 +919,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = RGB565(50, 255, 80);
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -819,7 +979,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -832,9 +992,9 @@ void FillPixArray()
   pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = RGB565(255, 50, 25); pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
-  strcpy(pInfo[BGPic].picName, "/GreenHorse.jpg");
+  strcpy(pInfo[BGPic].picName, "/GreenFlow.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
@@ -843,6 +1003,16 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+   strcpy(pInfo[BGPic].picName, "/GreenHorse.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/GreenMarquee.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -859,7 +1029,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = RGB565(255, 50, 25);
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -899,7 +1069,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false; // Date Hatch
@@ -919,7 +1089,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false; // Date Hatch
@@ -949,7 +1119,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = RGB565(200, 0, 200);
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
@@ -999,7 +1169,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false; // Date Hatch
@@ -1044,6 +1214,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false; // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/Leopard.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/Library.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -1084,15 +1264,25 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/LotsaRoof.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/Marshmallows.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = RGB565(255, 50, 25);
-  pInfo[BGPic].tColor = RGB565(20, 75, 255); pInfo[BGPic].tHatch = false; // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_GREEN; pInfo[BGPic++].dHatch = false; // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/MastHead.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1103,6 +1293,16 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/Mayan.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false; // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false; // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Mayan1.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1116,13 +1316,13 @@ void FillPixArray()
 
   strcpy(pInfo[BGPic].picName, "/Meadow.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
-  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {                                                                                                                                                                                
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_PINK;
-  pInfo[BGPic].tColor = TFT_PINK; pInfo[BGPic].tHatch = false; // Time Hatch
-  pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false; // Date Hatch
+  pInfo[BGPic].bColor = TFT_RED;
+  pInfo[BGPic].tColor = TFT_RED; pInfo[BGPic].tHatch = false; // Time Hatch
+  pInfo[BGPic].oColor = TFT_WHITE;
+  pInfo[BGPic].dColor = TFT_RED; pInfo[BGPic++].dHatch = false; // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Meadow2.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1143,6 +1343,16 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false; // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false; // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/Meteors.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false; // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/MeteorShower.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1189,7 +1399,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_GREEN;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_GREEN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREEN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1203,6 +1413,26 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_GREEN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/MMs.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/Monarch.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Moon1.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1224,6 +1454,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/MoonTree.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/MorePink.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -1244,6 +1484,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/NeonSwirls.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/OilSlick.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -1254,6 +1504,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/OneSplash.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/OrangeBlur.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -1263,6 +1523,26 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = TFT_BLUE ;
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/OrangeBubbles.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = TFT_BLUE ;
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/OrangeBubbles2.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = TFT_BLUE ;
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/OrangeCircles.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1294,12 +1574,22 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/OrangeMoon2.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/OrangeSun.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1319,7 +1609,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1350,9 +1640,9 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   pInfo[BGPic].bColor = TFT_YELLOW;
-  pInfo[BGPic].tColor = TFT_GREEN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_GREEN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/PartEclipse.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1369,7 +1659,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1382,14 +1672,14 @@ void FillPixArray()
   pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = 0;
-  pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/PinkBubbles.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_GREENYELLOW;
+  pInfo[BGPic].bColor = TFT_RED;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1409,7 +1699,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;  // RGB565(255, 50, 25);
+  pInfo[BGPic].bColor = TFT_RED;  // RGB565(255, 50, 25);
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1419,7 +1709,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;  // RGB565(255, 50, 25);
+  pInfo[BGPic].bColor = TFT_WHITE;  // RGB565(255, 50, 25);
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1449,7 +1739,17 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
+  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/PinkTesla.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1474,6 +1774,36 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/PrismRabbit.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/PsychBubbles.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/PsychBubbles2.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/PsychButterfly.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -1484,12 +1814,32 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/PsychButterfly2.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/PsychCamera.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/PsychExplosion.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1519,12 +1869,22 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/PsychPaisley.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/PsychPeacock.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
@@ -1544,6 +1904,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/PsychShip.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/PsychSky.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -1551,7 +1921,17 @@ void FillPixArray()
   }
   pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
-  pInfo[BGPic].oColor = TFT_GREENYELLOW;
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/PsychSplash.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/PsychVortex.jpg");
@@ -1569,7 +1949,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1589,17 +1969,17 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/PurpleFlowers.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1609,7 +1989,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_GREEN;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1630,9 +2010,9 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = RGB565(255, 0, 80); pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = RGB565(255, 0, 80); pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/PurpleLightning.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1644,6 +2024,16 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/PurpleLiquid.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/PurpleOrbs.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
@@ -1653,6 +2043,16 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/PurpleRings.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/PurpleSunset.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1669,7 +2069,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_GREENYELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;  // TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1679,7 +2079,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1699,7 +2099,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_RED;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1709,7 +2109,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1719,20 +2119,40 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/RedBlack.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/RedCabbage.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/RedChurch.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
-  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/RedConcave.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1749,7 +2169,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1759,8 +2179,28 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_GREENYELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/RedPalms.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/RedSpiral.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
@@ -1779,10 +2219,20 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_CYAN;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/RedWhite.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Redwoods.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1812,14 +2262,14 @@ void FillPixArray()
   pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Sailboat.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_GREENYELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1849,7 +2299,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1864,12 +2314,22 @@ void FillPixArray()
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
+  strcpy(pInfo[BGPic].picName, "/SnowFlake.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false; // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
   strcpy(pInfo[BGPic].picName, "/SnowTree.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1879,7 +2339,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -1900,9 +2360,9 @@ void FillPixArray()
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
   pInfo[BGPic].bColor = TFT_YELLOW;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Spectral.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1912,7 +2372,17 @@ void FillPixArray()
   pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = RGB565(255, 50, 25);  pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_GREENYELLOW;  pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/SpectrumRibbon.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE;  pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Spikes.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1939,10 +2409,10 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Spirals.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1982,7 +2452,7 @@ void FillPixArray()
   pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/StuffedAnimals.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -1999,10 +2469,20 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/SuperNova.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/SydneyOpera.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -2019,10 +2499,10 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/TeddyBear.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -2032,17 +2512,17 @@ void FillPixArray()
   pInfo[BGPic].bColor = TFT_CYAN;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Tiger.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
-  pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/Traces.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -2059,7 +2539,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_RED;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -2079,7 +2559,7 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -2089,12 +2569,22 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW; // Bright yellowish green
+  pInfo[BGPic].bColor = TFT_WHITE; // Bright yellowish green
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/WarpSpeed.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_YELLOW;
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
-  strcpy(pInfo[BGPic].picName, "/WarpSpeed.jpg");
+  strcpy(pInfo[BGPic].picName, "/WaterBower.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
@@ -2109,27 +2599,27 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_GREENYELLOW;
+  pInfo[BGPic].tColor = TFT_GREENYELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_GREENYELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/WaterLeaves.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_RED;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
-  strcpy(pInfo[BGPic].picName, "/WaterLeaves.jpg");
+  strcpy(pInfo[BGPic].picName, "/WaterLeaves2.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_RED;
+  pInfo[BGPic].bColor = TFT_WHITE;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
@@ -2149,20 +2639,30 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/WetDaisy.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_CYAN;
-  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
-  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/WetWalk.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/WildArt.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -2173,6 +2673,16 @@ void FillPixArray()
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/WispyMoon.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/WispySky.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
@@ -2199,17 +2709,47 @@ void FillPixArray()
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = TFT_YELLOW;
+  pInfo[BGPic].bColor = RGB565(255, 50, 25);
   pInfo[BGPic].tColor = TFT_YELLOW; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_YELLOW; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/YellowButterfly.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/YellowGreen.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_WHITE;
+  pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch
+
+  strcpy(pInfo[BGPic].picName, "/YellowLeaves.jpg");
+  if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
+  if (!LittleFS.exists(pInfo[BGPic].picName)) {
+    Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
+  }
+  pInfo[BGPic].bColor = TFT_CYAN;
+  pInfo[BGPic].tColor = TFT_CYAN; pInfo[BGPic].tHatch = false;  // Time Hatch
+  pInfo[BGPic].oColor = RGB565(255, 50, 25);
+  pInfo[BGPic].dColor = TFT_CYAN; pInfo[BGPic++].dHatch = false;  // Date Hatch
 
   strcpy(pInfo[BGPic].picName, "/YellowOrangeSwirl.jpg");
   if (veriPix) Serial.printf("#%3i, Pic: %s\r\n", BGPic, pInfo[BGPic].picName);
   if (!LittleFS.exists(pInfo[BGPic].picName)) {
     Serial.print(pInfo[BGPic].picName); Serial.println(" does not exist.");
   }
-  pInfo[BGPic].bColor = RGB565(48, 128, 255);
+  pInfo[BGPic].bColor = TFT_RED;
   pInfo[BGPic].tColor = TFT_WHITE; pInfo[BGPic].tHatch = false;  // Time Hatch
   pInfo[BGPic].oColor = RGB565(255, 50, 25);
   pInfo[BGPic].dColor = TFT_WHITE; pInfo[BGPic++].dHatch = false;  // Date Hatch

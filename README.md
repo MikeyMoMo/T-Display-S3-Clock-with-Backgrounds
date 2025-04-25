@@ -46,7 +46,9 @@ I have learned a bit about installing this for the first time.  I had a friend d
 
 12. In the TFT_eSPI folder, edit the User_Setup_Select.h and use this setup file if you will be using the T-Display S3:
     "Setup206_LilyGo_T_Display_S3.h>  // Setup file for T-Display ESP32-S3"
-    
+
+I have had very little luck with placing partitions.csv in the sketch folder and having it apply.  The linker simply ignores it.  I had to modify one of the .csv files in the partitions folder to get my needed partition sizes.  I surely hope I can find out why this is happening.  It happens on the Arduino IDE v1 and v2 so it is almost certainly something wrong with the file format but I surely cannot find out what!
+
 This is a very greatly modified version of a clock originally found here: https://www.instructables.com/T-Display-S3-NTP-Clock/
 
 I have added many features to this original code.  Very little of the original code is left.

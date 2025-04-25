@@ -1,5 +1,5 @@
 /*******************************************************************************************/
-void SetPic_Colors()
+JRESULT SetPic_Colors()
 /*******************************************************************************************/
 {
   // The input parm order is really messed up.  I was not thinking when I added the first
@@ -32,15 +32,21 @@ void SetPic_Colors()
   }
   else {
     if (prev_BGPic != BGPic) {
-      Serial.printf("%02i:%02i:%02i Loading #%03i: ", iHour, iMinute, iSecond, BGPic);
+      Serial.printf("%02i:%02i:%02i Loading #%3i: ", iHour, iMinute, iSecond, BGPic);
       Serial.println(pInfo[BGPic].picName);
     }
-    // The callback knows where to put the picture.
-    //  This just starts the process.
+    // The callback knows where to put the picture.  This just starts the process.
     // Load BG picture only.
     JPB_RC = TJpgDec.drawFsJpg(0, 0, pInfo[BGPic].picName, LittleFS);
-    if (JPB_RC != JDR_OK) Serial.println(pInfo[BGPic].picName);
-
+    if (JPB_RC != JDR_OK) {
+      Serial.println("Picture load failed for ");
+      Serial.println(pInfo[BGPic].picName);
+      iTemp = int(random(randSelections));
+      // If the same, pick a new number.
+      while (iTemp == BGPic) iTemp = int(random(randSelections));
+      BGPic = iTemp;
+      return JPB_RC;  // Stop the insanity... NOW!
+    }
     spriteTime.fillSprite(TFT_BLACK);
 
     if (pInfo[BGPic].tHatch) {
@@ -72,6 +78,7 @@ void SetPic_Colors()
     }
   }
   prev_BGPic = BGPic;
+  return JDR_OK;
 }
 /************** ****************************************************************************/
 void BuildAndShow(bool doOutline)
@@ -85,7 +92,9 @@ void BuildAndShow(bool doOutline)
 
   //  BGPic = 66;  // Testing hatching
 
-  SetPic_Colors();  // Put up the picture and set the text colors.
+  JPB_RC = JDR_INTR;  // Setup the condition to force calling SetPic_Colors.
+  while (JPB_RC != JDR_OK)
+    JPB_RC = SetPic_Colors(); // Put up the picture and set the text colors.
 
   /* I have had a lot of trouble with some of the pictures I made to be
       used as backgrounds because of the colors.  For some of them, no
@@ -319,6 +328,7 @@ void CheckButtons()
   while ((digitalRead(incrPin) == 0) &&
          (tftBL_Lvl <= MAX_BRIGHTNESS))
   {
+    delay(50);
     if (digitalRead(decrPin) == 0) {
       doMenu();
       return;
@@ -338,11 +348,12 @@ void CheckButtons()
     //    Serial.printf("+tft brightness now %i\r\n", tftBL_Lvl);
     BLChangeMillis = millis();
     BuildAndShow(NO_OUTLINE);
-    delay(100);
+    delay(50);
   }
   while ((digitalRead(decrPin)) == 0 &&
          (tftBL_Lvl >= MIN_BRIGHTNESS))
   {
+    delay(50);
     if (digitalRead(incrPin) == 0) {
       doMenu();
       return;
@@ -362,7 +373,7 @@ void CheckButtons()
     //    Serial.printf("-tft brightness now %i\r\n", tftBL_Lvl);
     BLChangeMillis = millis();
     BuildAndShow(NO_OUTLINE);
-    delay(100);
+    delay(50);
   }
 }
 /*******************************************************************************************/
@@ -374,12 +385,6 @@ void GetCurrentTime()
   {
     // Time and date available, obtain hours, minutes and seconds.
     // Then obtain day of week, day of month, month and year.
-    //  time(&now);
-    //  if (now > 100000) {
-    // It is now taking more than 1/2 second to update the screen so I will fudge
-    //  one second to try to make up for it.
-    // now++;
-    // localtime_r(&now, &timeinfo);
 
     strftime(chDayofWeek, sizeof(chDayofWeek), "%A", &timeinfo);
     strftime(chDayOfMonth, sizeof(chDayOfMonth), "%d", &timeinfo);
@@ -403,41 +408,34 @@ void GetCurrentTime()
       if (!getLocalTime(&timeinfo)) ESP.restart();  // Still bad?  Reboot!
     }
   }
+  if ((iDOW == 0) && (iHour == 4) && (iMinute == 2) && (iSecond == 10))
+    ESP.restart();
 }
 /*******************************************************************************************/
 void HourDance()
 /*******************************************************************************************/
 {
-  Serial.printf("It is now %02i:00\r\n", iHour);
+  //  Serial.printf("It is now %02i:00\r\n", iHour);
 
   // Do HourDance after updating the display to xx:00:00
   for (int i = 0; i < 4; i++) {
     tft.invertDisplay(false); delay(200);
     tft.invertDisplay(true); delay(200);
   }
-  setHourBrightness();
-  //  Serial.printf("Hourdance derived brightness level for hour %i of %i\r\n",
-  //                iHour, tftBL_Lvl);
 }
 /*******************************************************************************************/
 void setHourBrightness()
 /*******************************************************************************************/
 {
-  // For normal operation, use this one.
-  //  if (prev_BL_Hour == iHour) return;
-  //  prev_BL_Hour = iHour;
   preferences.begin("Hourlys", RO_MODE);
-  // To clear out all of the hourly readings, use the following two instead.
-  //  preferences.begin("Hourlys", RW_MODE);
-  //  preferences.clear();
 
   // If this hour has not been set, 1000 will be returned.  If it is
   //  and it is late, turn off the display.  It can be turned back on
   //  if anyone is awake and want to set it to be on for the hour.
   sprintf(chHour, "%d", iHour);
   tftBL_Lvl = preferences.getInt(chHour, 1000);  // Never been set?
-  Serial.printf("Read brightness level for hour %i of %i\r\n",
-                iHour, tftBL_Lvl);
+  Serial.printf("%02i:%02i:%02i - Read brightness level for hour %i of %i\r\n",
+                iHour, iMinute, iSecond, iHour, tftBL_Lvl);
   preferences.end();
 
   if (WakeupHour > SleepHour)
@@ -445,8 +443,11 @@ void setHourBrightness()
   else
     WakeUp = (iHour >= WakeupHour && iHour <= SleepHour);
 
+  // Serial.printf("tftBL_Lvl now set to %i\r\n", tftBL_Lvl);
+
   if (!WakeUp) tftBL_Lvl = 0;
-  if (tftBL_Lvl == 1000) tftBL_Lvl = defaultBright;
+  if (tftBL_Lvl > 500) tftBL_Lvl = defaultBright;  // == 1000 is not working.  Why?
+
   ledcWrite(TFT_BL, tftBL_Lvl);  // Activate whatever was decided on.
   Serial.printf("%02i:%02i:%02i - Brightness level for hour %i set to %i\r\n",
                 iHour, iMinute, iSecond, iHour, tftBL_Lvl);
@@ -455,8 +456,8 @@ void setHourBrightness()
 void SaveOptions()
 /*******************************************************************************************/
 {
-  // On the modulo 10 minute plus 10 seconds, see if saving the brightness
-  //  value is needed.  Also on the second to last second of the hour.
+  // On the modulo 10 minute, see if saving the brightness value is needed.
+  // Also on the second to last second of the hour.
   if ((iMinute > 0 && iMinute % 10 == 0 && iSecond == 0) ||
       (iMinute == 59 && iSecond == 58)) {
     preferences.begin("Hourlys", RW_MODE);
@@ -621,12 +622,207 @@ void drawGreenGraphic()
   }
 }
 /*******************************************************************************************/
+void printVers()
+/*******************************************************************************************/
+{
+  int      lastDot, lastV;
+  String   sTemp;
+
+  //  Serial.println(__FILENAME__);  // Same as __FILE__
+  sTemp = String(__FILE__);
+  // Get rid of the trailing .ino tab name. In this case, "\Utilities.ino"
+  sTemp = sTemp.substring(0, sTemp.lastIndexOf("\\"));
+  Serial.print("Running from: "); Serial.println(sTemp);
+
+  sTemp = String(__FILE__);  // Start again for the version number.
+  lastDot = sTemp.lastIndexOf(".");
+  if (lastDot > -1) {  // Found a dot.  Thank goodness!
+    lastV = sTemp.lastIndexOf("v");  // Find start of version number
+    if (lastV > -1) {  // Oh, good, found version number, too
+      sVer = sTemp.substring(lastV + 1, lastDot); // Pick up version number
+      lastV = sVer.lastIndexOf("\\");
+      if (lastV > -1) sVer = sVer.substring(0, lastV);
+    } else {
+      sVer = "0.00";  // Unknown version.
+    }
+  } else {
+    sVer = "n/a";  // Something badly wrong here!
+  }
+  Serial.print("Version " + sVer + ", ");
+  Serial.printf("Compiled on %s at %s.\r\n", __DATE__, __TIME__);
+}
+/*******************************************************************************************/
 void showInputOptions()
 /*******************************************************************************************/
 {
-  Serial.println("\r\nEnter B or b to toggle battery usage state (full or partial).");
-  Serial.println("Enter F or f to toggle showing time/date/battery fields.");
-  Serial.println("Enter P or p for the name of the current BG Pic.");
-  Serial.println("Enter V or v to toggle battery voltage display on and off.");
-  Serial.println("Enter ? for this list.  Upper or Lower case OK.\r\n");
+  Serial.println("\r\nEnter # to to start number entry to select a specific picture.");
+  Serial.println("Enter 0-9 to finish number entry to select a specific picture.");
+  Serial.println("Enter + (testing) to step to the next picture by number.");
+  Serial.println("Enter - (testing) to step to the previous picture by number.");
+  Serial.println("Enter B to toggle battery usage state (full or partial).");
+  Serial.println("Enter F to toggle showing time/date/battery fields.");
+  Serial.println("Enter H (testing) to see all hourly brightness values on the Monitor.");
+  Serial.println("Enter I (testing) to invert all colors on the display.");
+  Serial.println("Enter P for the name of the current BG Pic.");
+  Serial.println("Enter R (testing) to change to a new random picture.");
+  Serial.println("Enter V to toggle battery voltage display on and off.");
+  Serial.println("Enter ? for this list.  Upper or Lower case OK.");
+  Serial.println("Enter CR or LF to finish picture number entry or execute your selection.");
+  Serial.println("If you make an unknown entry, this list is printed on the monitor.\r\n");
+}
+/*******************************************************************************************/
+void HandleSerialInput()
+/*******************************************************************************************/
+{
+  char input = Serial.read(); // Read one character from the serial input
+  int i, iHTemp;
+
+  input = toupper(input); // Convert the character to uppercase
+  //    Serial.print("Received char: "); Serial.println(input); Serial.flush();
+  // In use:
+  //         # - Prepare the routine for number entry. Number terminated by CR/LF
+  //         0-9 - Input numbers to create next picture to show's number.
+  //         + - Display next numbered BG picture
+  //         - - Display previous numbered BG picture
+  //         B - Change battery usage state
+  //         F - Toggle all fields on/off
+  //         H - (Testing) Show hourly brightness numbers.
+  //         I - (Testing) Invert display colors
+  //         P - Print name of current picture on Serial Monitor
+  //         R - (Testing) Change random selection of picture (change background pic)
+  //         V - Toggle battery voltage display
+  //         ? - Show list of commands on Serial Monitor
+  //         CR/LF - End number entry, if any and show picture.
+  //         default action - Show a message that the user is drunk!  ;-))
+  // Operational note:
+  //         iUserPic, if -1 is inactive.  # sign entry initializes it to 0, then
+  //                   number entries build it up until CR/LR terminates entry, sets
+  //                   BGPic and resets iUserPic to -1.
+  //         veriPix - Set this to true to get numbers printed for the BG pictures
+  //                    during startup (in setup).
+
+  switch (input) {
+    case '#':  // Prepare for user picture selection number entry.
+      iUserPic = 0;
+      break;
+    case '0' ... '9':
+      //    case '0': case '1': case '2': case '3': case '4':  // case '0' ... '9': should work.
+      //    case '5': case '6': case '7': case '8': case '9':
+      if (iUserPic > -1)
+        iUserPic = iUserPic * 10 + int(input - '0');
+      else {
+        Serial.println("Unexpected number input.");
+        showInputOptions();
+      }
+      break;
+    case '+':
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      BGPic++;
+      if (BGPic == randSelections) {
+        Serial.println("Picture selection number too high.  Resetting to 0.");
+        BGPic = 0;
+      }
+      break;
+    case '-':
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      BGPic--;
+      if (BGPic < 0) {
+        Serial.println("Picture selection number too low.  Resetting to 0.");
+        BGPic = 0;
+      }
+      break;
+    case 'B':  // Toggle battery usage state
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      dRead = digitalRead(15);
+      if (dRead == 0) {
+        digitalWrite(15, 1);
+        Serial.println("\r\nBattery usage state set to full power. "
+                       "There is no off state.");
+      } else {
+        digitalWrite(15, 0);
+        Serial.println("\r\nBattery usage state set to partial power. "
+                       "There is no off state.");
+      }
+      showInputOptions();
+      break;
+    case 'F':  // Toggle showing all fields
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      ShowFields = !ShowFields;
+      Serial.printf("\r\nFields will%s be shown.\r\n", ShowFields ? "" : " not");
+      showInputOptions();
+      break;
+    case 'H':  // Show hourly brightness values
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      preferences.begin("Hourlys", RO_MODE);
+      for (i = 0; i < 24; i++) {
+        sprintf(chHour, "%d", i);
+        iHTemp = preferences.getInt(chHour, 1000);  // Never been set?
+        Serial.printf("Brightness level for hour %2i is %4i\r\n", i, iHTemp);
+      }
+      preferences.end();
+      showInputOptions();
+      break;
+    case 'I':  // Invert screen
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      if (displayInverted) {
+        tft.invertDisplay(false);
+        displayInverted = false;
+      } else {
+        tft.invertDisplay(true);
+        displayInverted = true;
+      }
+      showInputOptions();
+      break;    // Optional here. Included for completeness.
+    case 'P':  // Name current BG pic
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      Serial.print("\r\nPicture showing is: ");
+      Serial.print(pInfo[BGPic].picName);
+      Serial.printf(", with brightness of %i/255.\r\n", tftBL_Lvl);
+      showInputOptions();
+      break;
+    case 'R':  // Change BG pic
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      Serial.println("User requested new random background picture.");
+      BGPic = int(random(randSelections));  // Name will be shown by SetPic_Colors.
+      showInputOptions();
+      break;
+    case 'V':  // Toggle showing battery voltage
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      showVolts = !showVolts;
+      Serial.printf("\r\Battery voltage will%s be shown.\r\n", showVolts ? "" : " not");
+      showInputOptions();
+      break;
+    case '?':
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      showInputOptions();
+      break;
+    case '\r':
+    case '\n':
+      if (iUserPic >= randSelections) {
+        Serial.println("Picture selection number too high.");
+        iUserPic = -1;  // Invalidate and reset number entry mode.
+      }
+      if (iUserPic > -1) {
+        Serial.printf("User requested loading of picture #$3i\r\n", iUserPic);
+        BGPic = iUserPic;  // Already range checked.
+      }
+      iUserPic = -1;  // Reset number entry mode.
+      break;
+    default:
+      if (iUserPic > -1) Serial.println("Number entry aborted.");
+      iUserPic = -1;
+      Serial.printf("\r\nUnknown input \'%c\'!", input);  // Handle unknown input
+      showInputOptions();
+      break;
+  }
 }

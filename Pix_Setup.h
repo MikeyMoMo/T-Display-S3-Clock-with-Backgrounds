@@ -45,1165 +45,1165 @@ struct picDef pInfo[] = {
   { .picName = "/AFriend.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/AFriend2.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/AICalm.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/AliceWonder.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/AndBeyond.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/AngrySun.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/AniForest.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Aquarium.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Arches.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/AutumnBlur.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Balloons.jpg",
     .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BigBlueFlower.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BigRack.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BigSurf.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BirdFeather.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Birds.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlackHole.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlowIt.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueBlack.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Bluebonnets.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueBubbles.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueCity.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueEgg.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueExplosion.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueEyesCat.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueFlower.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueGold.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueGray.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueIceHouse.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueLagoon.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueMirror.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueMoon.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BluePurpleBlooms.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueRiverGreenTrees.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueShell.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueSkyTrees.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueSun.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueSwirl.jpg",
     .bColor = TFT_GREENYELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueSwirls.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueTesla.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueTree.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueTriangles.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueVanes.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueWaterfall.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueWhiteFlames.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlueWhiteRipples.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BlurryReflection.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BoatWharf.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Bower.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BrightForest.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Broadway.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BrooklynBridge.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BrownBike.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BrownDesert.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BrownFence.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BrownShore.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BrownTrees.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/BubblyBackground.jpg",
-    .bColor = RGB565(255, 50, 25), .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Butterflies.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = RGB565(5, 5, 5), .tColor = RGB565(5, 5, 5), .tHatch = false,
+    .dColor = RGB565(5, 5, 5), .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Butterfly1.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ButterflyDaisy.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Cabanas.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Camelia.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
-  },
-  { .picName = "/CandyStretch.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
+  },
+  { .picName = "/CandyStretch.jpg",
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CapitalBurning.jpg",
     .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
     .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Carnations.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = RGB565(5, 5, 5), .tColor = TFT_CYAN, .tHatch = false,
     .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CherryBlossom2.jpg",
-    .bColor = TFT_RED, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
-  },
-  { .picName = "/CherryBlossoms.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
+  },
+  { .picName = "/CherryBlossoms.jpg",
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CherryTree.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ClearWater.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CloudTops.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CNTMoon.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Cockatoo.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColaBubbles.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColaBubbles2.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorBars.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorBoards.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorBubbles.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorClouds.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorCoins.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorCubes.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorPetals.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorRays.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorStars.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorStars2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorStars3.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorStrata.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = RGB565(5, 5, 5), .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorStripes.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorSwirls.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ColorSwirls2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Copper.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CopperOrbs.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CosmosBubbles.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Crescent.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Crimson.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CryptoMoon.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CrystalFlower.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/CyanGrassDew.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Daisys.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DarkFlower.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DarkLighthouse.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DarkLondon.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DarkTrees.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DataFlow.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DeepBlue.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DeepSea.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DeepSky.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DewBud.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DiagonalRainbow.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = RGB565(5, 5, 5), .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DigBlue.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DontKnow.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DontKnow1.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DontKnow2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DontKnow3.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DontKnow4.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DotVortex.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Dover.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_RED, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = TFT_YELLOW, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Driftwood.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/DryGround.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Earth.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Ejection.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Eyes.jpg",
-    .bColor = RGB565(255, 50, 25), .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = RGB565(5, 5, 5), .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FairyFlys.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FallSunset.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FantasyIsland.jpg",
-    .bColor = TFT_RED, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor =  RGB565(5, 5, 5), .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = TFT_YELLOW, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Feathers.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FerrisWheel.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Fiberglass.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FieldOfColor.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FireRainbow1.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false, 
+    .dColor = TFT_WHITE, .dHatch = false,
     .obColor = TFT_BLUE, .otColor = TFT_BLUE,
     .odColor = TFT_BLUE
   },
   { .picName = "/FireTown.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FireWing.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FivePoints.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FizzCity.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FlameTree.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FletNix.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FloatingDirt.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FlowerWheel.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Frame.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FrostyTrees.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FtBraggOcean.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FutureCity.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FuzzyLights.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/FutureCity2.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Galaxy.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GardenStair.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GayMist.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Geometric1.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GoldenGateBridge.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GoldenTreeLine.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GoldLeaf.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GoldVein.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GossamerButterfly.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GossamerMoons.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Grass.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenBench.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenFlow.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenHorse.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenMarble.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenMarquee.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenMist.jpg",
-    .bColor = RGB565(255, 50, 25), .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = TFT_BLUE, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenMountain.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenRocks.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenSeeds.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenTrail.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenTreeRoad.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/GreenWaterfall.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Halloween.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Hearth.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Heather.jpg",
-    .bColor = RGB565(200, 0, 200), .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/HighlightCity.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/HotAirBalloons.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/HotPink.jpg",
-    .bColor = RGB565(200, 0, 200), .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Howling.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = TFT_BLUE, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/HummingBird.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/IntenseBlue.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/IntenseRed.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/JapaneseMellow.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/JapanGateway.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/JapanStreetLight.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/JapanStreetLight1.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/JapanStreetLight2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/JustFish.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Justice.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/KidRainbow.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/LeafDrops.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/LeafRipples.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/LEDMatrix.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Leopard.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Library.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/LightStreak.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Lilypads.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/LitMushrooms.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/LonelyRed.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false, 
-    .obColor = RGB565(0, 50, 255), .otColor = RGB565(0, 50, 255),
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = RGB565(0, 50, 255),
     .odColor = RGB565(0, 50, 255)
   },
   { .picName = "/LongSpiral.jpg",
@@ -1215,1591 +1215,1591 @@ struct picDef pInfo[] = {
   { .picName = "/LotsaRoof.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/LotsOfBlooms.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MardiGras.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Marshmallows.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MastHead.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Mayan.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Mayan1.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Meadow.jpg",
-    .bColor = TFT_RED, .tColor = TFT_RED, .tHatch = false,
-    .dColor = TFT_RED, .dHatch = false,
-    .obColor = TFT_WHITE, .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Meadow2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MellowGold.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Menton.jpg",
-    .bColor = TFT_WHITE , .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE , .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Meteors.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MeteorShower.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Mickey.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MilkyWay.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_GREEN, .tHatch = false,
-    .dColor = TFT_GREEN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MilkyWay2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MilkyWayCity.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MilkyWayTown.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MistHouse.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MistyFullMoon.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MistySunset.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREEN, .tHatch = false,
-    .dColor = TFT_GREEN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MistyValley.jpg",
-    .bColor = TFT_GREEN, .tColor = TFT_GREEN, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MMs.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Monarch.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Moon1.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MoonCastle.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_GREEN, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MoonTree.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MorePink.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_GREEN, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MultiBright.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = true,
     .dColor = TFT_WHITE, .dHatch = true,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MushroomOwl.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = true,
     .dColor = TFT_WHITE, .dHatch = true,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MusicNotes.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/MustardField.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/NahNah.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Nebula.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/NeonSwirls.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Nips.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/NobodyHome.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/NorthernLights1.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/NorthernLights2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OddClouds.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI04.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI06.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI07.jpg",
-    .bColor = TFT_RED, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI09.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI11.jpg",
     .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI13.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI14.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI18.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI19.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI20.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OI21.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OilSlick.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OneSplash.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Oragami.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeBlast.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeBlur.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false, 
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
     .obColor = TFT_BLUE, .otColor = TFT_BLUE,
     .odColor = TFT_BLUE
   },
   { .picName = "/OrangeBubbles.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false, 
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
     .obColor = TFT_BLUE, .otColor = TFT_BLUE,
     .odColor = TFT_BLUE
   },
   { .picName = "/OrangeBubbles2.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false, 
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
     .obColor = TFT_BLUE, .otColor = TFT_BLUE,
     .odColor = TFT_BLUE
   },
   { .picName = "/OrangeCircles.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeGeo.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeLeavesMoon.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeMoon.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeMoon2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeSun.jpg",
     .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
     .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeSunset.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeTown.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OrangeVortex.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Osaka.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/OtherWorld.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Outhouse.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Owl.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Pagoda.jpg",
-    .bColor = TFT_ORANGE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Pagoda2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PaintedSky.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PaintSplats.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Pansys.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PartEclipse.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PastelRipples.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PastelWaves.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PenguinMarch.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PhantomFlower.jpg",
     .bColor = TFT_GREENYELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkBalls.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkBubbles.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkClouds.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkFlower2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkFlowers.jpg",
-    .bColor = TFT_RED, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkGateway.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkGreen.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkHearts.jpg",
     .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
     .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkLeaves.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkPurple.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkRoses.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkTesla.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PinkThings.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Plasma.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Players.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Prism.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PrismRabbit.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychBubbles.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychBubbles2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychButterfly.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychButterfly2.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychCamera.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychClouds.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychDots.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychExplosion.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychFeathers.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychHills.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychLillypad.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychLiquid.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychMagma.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychMeteors.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychMountains.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychNotes.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychPaisley.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychPeacock.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychRecord.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychRichter.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychShip.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychSky.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychSmoke.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychSpiral.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychSplash.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychSwirls.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychVortex.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychWave.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsychYarn.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PsycodelicNotes.jpg",
-    .bColor = TFT_BLUE, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleBramble.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleButterfly.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleFlowers.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleGossamer.jpg",
-    .bColor = TFT_BLUE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleGossamer2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleHeather.jpg",
-    .bColor = RGB565(50, 255, 80), .tColor = RGB565(50, 255, 80), .tHatch = false,
-    .dColor = RGB565(50, 255, 80), .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleLeaves.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleLightning.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleLiquid.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleMorning.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleMountains.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleOrbs.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurplePlanet.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleRings.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleSpires.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleSunset.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PurpleSwirl.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/PyramidBalls.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Radiance.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Radiance2.jpg",
     .bColor = TFT_GREENYELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Radiance3.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RainyStreet.jpg",
-    .bColor = TFT_RED, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RandomTiled.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RBExplosion.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedandYellow.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedBlack.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = RGB565(250, 5, 250), .tColor = RGB565(250, 5, 250), .tHatch = false,
+    .dColor = RGB565(250, 5, 250), .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedBlueRocks.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedBoats.jpg",
     .bColor = TFT_CYAN, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedCabbage.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedChurch.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedConcave.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedFlower.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedGoldPath.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedLeaves.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_GREENYELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedPalms.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedPath.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedPeaks.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedSpiral.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedSunset.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedTracks.jpg",
-    .bColor = TFT_GREEN, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedTree.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedUmbrellas.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedWhite.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedWhiteStalks.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RedWhiteTiled.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Redwoods.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_GREEN, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RightChevron.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Rings.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RockHoleOcean.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RockStream.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/RoseThorns.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Sailboat.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SaturnEclipse.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Seagull.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Sepia.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SepiaOutline.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ShyFlowers.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SimpGraf1.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SimpGraf2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SnowFlake.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SnowTree.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Soaring.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SomeLeaves.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Somewhere.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SpaceFlame.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SpaceStation.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SpaceTiger.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Spectral.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SpectrumRibbon.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Spikes.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Spiral.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SpiralBall.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Spirals.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Spirals2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SS1.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/StackedHouses.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/StarBurst.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/StarGate.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/StreamPath.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/StripedOrbs.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/StuffedAnimals.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Sunflowers.jpg",
     .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SunsetSky.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SuperNova.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/SydneyOpera.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/TallFalls.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/TanFlowers.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/TeddyBear.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Tendrils.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ThreadFalls.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Tiger.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/TiledRoof.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Traces.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Trapezoids.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Tulips.jpg",
-    .bColor = TFT_RED, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/TwoBirdsPink.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/TwoTrees.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/TypewriterKeys.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/UpAndAway.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/VanishingLibrary.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/VanishingPt.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/VeryRedLeaves.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/VeryRedRoses.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/ViewRoom.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Violets.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WarpSpeed.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaterBower.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Waterfall.jpg",
-    .bColor = TFT_GREENYELLOW, .tColor = TFT_GREENYELLOW, .tHatch = false,
-    .dColor = TFT_GREENYELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaterfallLeaf.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaterLeaves.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaterLeaves2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaterPots.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaterPots2.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaterSkyShack.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WaveRocks.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WeirdClouds.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WetDaisy.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WetWalk.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Wheels.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Wild1.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WildArt.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WildPurple.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WispyMoon.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WispySky.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WitchyTree.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WolfMoon.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/WorldRings.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/Worlds.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/XmasVillage.jpg",
-    .bColor = RGB565(255, 50, 25), .tColor = TFT_YELLOW, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
     .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/YellowBlue.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/YellowButterfly.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/YellowGreen.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/YellowLeaves.jpg",
-    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
-    .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
-  },
-  { .picName = "/YellowOrangeSwirl.jpg",
     .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
+  },
+  { .picName = "/YellowOrangeSwirl.jpg",
+    .bColor = TFT_CYAN, .tColor = TFT_CYAN, .tHatch = false,
+    .dColor = TFT_CYAN, .dHatch = false,
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/YellowPainting.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/YellowWash.jpg",
-    .bColor = TFT_RED, .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_CYAN, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_CYAN, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   },
   { .picName = "/YodaMaybe.jpg",
-    .bColor = TFT_YELLOW, .tColor = TFT_CYAN, .tHatch = false,
+    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
-    .obColor = RGB565(255, 50, 25), .otColor = RGB565(255, 50, 25),
-    .odColor = RGB565(255, 50, 25)
+    .obColor = outlineRed, .otColor = outlineRed,
+    .odColor = outlineRed
   }
 };

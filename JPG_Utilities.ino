@@ -38,8 +38,8 @@ void printPixInfo()
 /*******************************************************************************************/
 {
   for (int i = 0; i < randSelections; i++) {
-    //    Serial.printf("Picture #%3i: %s\r\n", i, pInfo[i].picName);
-    Serial.print("Picture "); printPicName(i, pInfo[i].picName);
+    Serial.print("Picture "); 
+    printPicName(i, pInfo[i].picName);
   }
 }
 /*******************************************************************************************/

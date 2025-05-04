@@ -17,17 +17,20 @@ JRESULT SetPic_Colors()
 
   if (BGPic == 0) {
     if (prev_BGPic != BGPic)
-      Serial.printf("%02i:%02i:%02i Showing #000: Red Graphic\r\n", iHour, iMinute, iSecond);
+      Serial.printf("%02i:%02i:%02i Showing #000: Red Graphic\r\n",
+                    iHour, iMinute, iSecond);
     drawRedGraphic();
   }
   else if (BGPic == 1) {
     if (prev_BGPic != BGPic)
-      Serial.printf("%02i:%02i:%02i Showing #001: Blue Graphic\r\n", iHour, iMinute, iSecond);
+      Serial.printf("%02i:%02i:%02i Showing #001: Blue Graphic\r\n",
+                    iHour, iMinute, iSecond);
     drawBlueGraphic();
   }
   else if (BGPic == 2) {
     if (prev_BGPic != BGPic)
-      Serial.printf("%02i:%02i:%02i Showing #002: Green Graphic\r\n", iHour, iMinute, iSecond);
+      Serial.printf("%02i:%02i:%02i Showing #002: Green Graphic\r\n",
+                    iHour, iMinute, iSecond);
     drawGreenGraphic();
   }
   else {
@@ -150,7 +153,8 @@ void BuildAndShow(bool doOutline)
     if (pInfo[BGPic].obColor != 0) {  // Only do this if there is an outline color defined.
       // First, do the outlining.
       if (doOutline == DO_OUTLINE) {
-        spriteBattBL.setTextColor(pInfo[BGPic].obColor, TFT_BLACK);  // Load up the outline color.
+        // Load up the outline color.
+        spriteBattBL.setTextColor(pInfo[BGPic].obColor, TFT_BLACK);
         // Diagonals
         spriteBattBL.drawString(chBuffer, x - 2, y - 2);
         spriteBattBL.drawString(chBuffer, x + 2, y + 2);
@@ -177,7 +181,8 @@ void BuildAndShow(bool doOutline)
     if (pInfo[BGPic].otColor != 0) {  // Only do this if there is an outline color defined.
       // First, do the outlining.
       if (doOutline == DO_OUTLINE) {
-        spriteTime.setTextColor(pInfo[BGPic].otColor, TFT_BLACK);  // Load up the outline color.
+        // Load up the outline color.
+        spriteTime.setTextColor(pInfo[BGPic].otColor, TFT_BLACK);
         // Diagonals
         spriteTime.drawString(chBuffer, x - 2, y - 2);
         spriteTime.drawString(chBuffer, x + 2, y + 2);
@@ -212,7 +217,8 @@ void BuildAndShow(bool doOutline)
     if (pInfo[BGPic].odColor != 0) {  // Only do this if there is an outline color defined.
       // First, do the outlining.
       if (doOutline == DO_OUTLINE) {
-        spriteDate.setTextColor(pInfo[BGPic].odColor, TFT_BLACK);  // Load up the outline color.
+        // Load up the outline color.
+        spriteDate.setTextColor(pInfo[BGPic].odColor, TFT_BLACK);
         // Diagonals
         spriteDate.drawString(chBuffer, x - 2, y - 2);
         spriteDate.drawString(chBuffer, x + 2, y + 2);
@@ -308,10 +314,12 @@ void doMenu()
             dRead = digitalRead(15);
             if (dRead == 0) {
               digitalWrite(15, 1);
-              Serial.println("Battery usage state set to full power. There is no off state.");
+              Serial.println("Battery usage state set to full power. "
+                             "There is no off state.");
             } else {
               digitalWrite(15, 0);
-              Serial.println("Battery usage state set to partial power. There is no off state.");
+              Serial.println("Battery usage state set to partial power. "
+                             "There is no off state.");
             }
             while ((digitalRead(incrPin) == 0) || (digitalRead(decrPin) == 0));
             return;
@@ -349,6 +357,7 @@ void CheckButtons()
 /*******************************************************************************************/
 {
   int pressLength = 0;
+  int prevBL = tftBL_Lvl;
 
   if ((digitalRead(incrPin) == 0) && (digitalRead(decrPin) == 0)) {
     //    Serial.printf("%lu - 1 Both pressed, do menuing.\r\n", millis());
@@ -372,7 +381,10 @@ void CheckButtons()
     else if (pressLength > 5) BLchange = 4;
     else BLchange = 2;
     tftBL_Lvl += BLchange;
-
+    if (prevBL == 0) {
+      tft.writecommand(ST7789_DISPON);  // Turn on display hardware.
+      prevBL = tftBL_Lvl;
+    }
     if (tftBL_Lvl > MAX_BRIGHTNESS)
       tftBL_Lvl = MAX_BRIGHTNESS;
 
@@ -553,7 +565,7 @@ void initTime()
   iDOM   = timeinfo.tm_mday;
   iYear  = timeinfo.tm_year + 1900;
   iHour  = timeinfo.tm_hour;
-  Serial.println(localtime(&UTC), "Local %a %m/%d/%Y %T %Z");
+  Serial.println(localtime(&UTC), "Local time/date %A %m/%d/%Y %T %Z");
 }
 /*******************************************************************************************/
 void timeSyncCallback(struct timeval * tv)
@@ -759,7 +771,7 @@ void HandleSerialInput()
       break;
 
     case '0' ... '9':
-      //    case '0': case '1': case '2': case '3': case '4':  // case '0' ... '9': should work.
+      //    case '0': case '1': case '2': case '3': case '4':
       //    case '5': case '6': case '7': case '8': case '9':
       if (iUserPic > -1)
         iUserPic = iUserPic * 10 + int(input - '0');
@@ -846,7 +858,7 @@ void HandleSerialInput()
     case 'P':  // Name current BG pic
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
-      Serial.print("Picture showing is: ");
+      Serial.printf("Picture showing is: #%i: ", BGPic);
       Serial.print(pInfo[BGPic].picName);
       Serial.printf(", with brightness of %i/255.\r\n", tftBL_Lvl);
       showInputOptions();
@@ -890,7 +902,7 @@ void HandleSerialInput()
     default:
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
-      Serial.printf("\r\nUnknown input \'%c\'\r\n!", input);  // Handle unknown input
+      Serial.printf("*>> Unknown input \'%c\'!\r\n", input);  // Handle unknown input
       showInputOptions();
       break;
   }

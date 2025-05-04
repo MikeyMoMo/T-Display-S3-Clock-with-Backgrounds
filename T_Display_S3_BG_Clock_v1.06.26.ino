@@ -84,7 +84,7 @@ String      stringIP;  // IP address.
 
 // Display color creation macro.
 #define RGB565(r,g,b) ((((r>>3)<<11) | ((g>>2)<<5) | (b>>3)))
-
+#define outlineRed RGB565(255, 50, 25)
 /*******************************************************************************************/
 //
 // Global variables.
@@ -500,7 +500,7 @@ void loop()
   // In my experience you need to reset the brightness control PWM.
   if (prevBL_Lvl == 0) {
     prevBL_Lvl = tftBL_Lvl;
-    tft.writecommand(ST7789_DISPON); //turn on display
+    tft.writecommand(ST7789_DISPON);  // Turn on display hardware
     ledcAttach(TFT_BL, 5000, 8);   // PWM timer automatically assigned to pin# (TFT_BL).
     ledcWrite(TFT_BL, tftBL_Lvl);  // Activate at required level again by pin# (TFT_BL).
   }

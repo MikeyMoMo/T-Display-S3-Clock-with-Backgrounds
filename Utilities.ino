@@ -32,8 +32,10 @@ JRESULT SetPic_Colors()
   }
   else {
     if (prev_BGPic != BGPic) {
-      Serial.printf("%02i:%02i:%02i Loading #%3i: ", iHour, iMinute, iSecond, BGPic);
-      Serial.println(pInfo[BGPic].picName);
+      Serial.printf("%02i:%02i:%02i Loading ", iHour, iMinute, iSecond);
+      Serial.flush();
+      printPicName(BGPic, pInfo[BGPic].picName);
+      Serial.flush();
     }
     // The callback knows where to put the picture.  This just starts the process.
     // Load BG picture only.
@@ -112,61 +114,7 @@ void BuildAndShow(bool doOutline)
       work.  Time for bed!
   */
 
-  int x = 3, y = 5;
-  if (ShowFields) {
-    sprintf(chBuffer, "%02i:%02i:%02i", iHour, iMinute, iSecond);
-    if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
-      if (doOutline == DO_OUTLINE) {
-        spriteTime.setTextColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
-        // Diagonals
-        spriteTime.drawString(chBuffer, x - 2, y - 2);
-        spriteTime.drawString(chBuffer, x + 2, y + 2);
-        spriteTime.drawString(chBuffer, x + 2, y - 2);
-        spriteTime.drawString(chBuffer, x - 2, y + 2);
-        // Orthoginals
-        spriteTime.drawString(chBuffer, x - 2, y);
-        spriteTime.drawString(chBuffer, x + 2, y);
-        spriteTime.drawString(chBuffer, x, y - 2);
-        spriteTime.drawString(chBuffer, x, y + 2);
-      }
-    }
-    spriteTime.setTextColor(pInfo[BGPic].tColor, TFT_BLACK);  // Load up the outline color.
-    spriteTime.drawString(chBuffer, x, y);
-    spriteTime.pushToSprite(&spriteBG, 18, 52, TFT_BLACK);
-  }
-  // Create and draw the date sprite onto the background sprite.
-
-  nTemp = atoi(chDayOfMonth);
-  if (nTemp < 10) sprintf(chDayOfMonth, "%2d", nTemp);
-
-  // Update the date sprite
-  if (ShowFields) {
-    sprintf(chBuffer, "%s  %s %s, %i",
-            String(chDayofWeek), String(chMonth),
-            String(chDayOfMonth), iYear);
-
-    x = 5; y = 3;
-    if (pInfo[BGPic].oColor != 0) {  // Only do this if there is an outline color defined.
-      if (doOutline == DO_OUTLINE) {
-        spriteDate.setTextColor(pInfo[BGPic].oColor, TFT_BLACK);  // Load up the outline color.
-        // Diagonals
-        spriteDate.drawString(chBuffer, x - 2, y - 2);
-        spriteDate.drawString(chBuffer, x + 2, y + 2);
-        spriteDate.drawString(chBuffer, x + 2, y - 2);
-        spriteDate.drawString(chBuffer, x - 2, y + 2);
-        // Orthoginals
-        spriteDate.drawString(chBuffer, x - 2, y);
-        spriteDate.drawString(chBuffer, x + 2, y);
-        spriteDate.drawString(chBuffer, x, y - 2);
-        spriteDate.drawString(chBuffer, x, y + 2);
-      }
-    }
-    spriteDate.setTextColor(pInfo[BGPic].dColor, TFT_BLACK);  // Load up the outline color.
-    spriteDate.drawString(chBuffer, x, y);
-    spriteDate.pushToSprite(&spriteBG, 14, 128, TFT_BLACK);
-  }
-
-  // Read the battery voltage.
+  // Read the Battery voltage.
 
   if (ShowFields) {
     spriteBattBL.fillSprite(TFT_BLACK);
@@ -195,10 +143,94 @@ void BuildAndShow(bool doOutline)
     } else {
       sprintf(chBuffer, "Brightness: %i", tftBL_Lvl);
     }
+
+    // Update the Battery sprite
+
+    x = 5; y = 3;
+    if (pInfo[BGPic].obColor != 0) {  // Only do this if there is an outline color defined.
+      // First, do the outlining.
+      if (doOutline == DO_OUTLINE) {
+        spriteBattBL.setTextColor(pInfo[BGPic].obColor, TFT_BLACK);  // Load up the outline color.
+        // Diagonals
+        spriteBattBL.drawString(chBuffer, x - 2, y - 2);
+        spriteBattBL.drawString(chBuffer, x + 2, y + 2);
+        spriteBattBL.drawString(chBuffer, x + 2, y - 2);
+        spriteBattBL.drawString(chBuffer, x - 2, y + 2);
+        // Orthoginals
+        spriteBattBL.drawString(chBuffer, x - 2, y);
+        spriteBattBL.drawString(chBuffer, x + 2, y);
+        spriteBattBL.drawString(chBuffer, x, y - 2);
+        spriteBattBL.drawString(chBuffer, x, y + 2);
+      }
+    }
     spriteBattBL.setTextColor(pInfo[BGPic].bColor, TFT_BLACK); // spriteBattBL text colors
-    spriteBattBL.drawString(chBuffer, 0, 0);
-    spriteBattBL.pushToSprite(&spriteBG, 4, 2, TFT_BLACK);
+    // Now, put in the actual, readable text for the battery voltage.
+    spriteBattBL.drawString(chBuffer, x, y);
+    spriteBattBL.pushToSprite(&spriteBG, 0, 0, TFT_BLACK);
   }
+
+  // Update the Time sprite
+
+  int x = 3, y = 5;
+  if (ShowFields) {
+    sprintf(chBuffer, "%02i:%02i:%02i", iHour, iMinute, iSecond);
+    if (pInfo[BGPic].otColor != 0) {  // Only do this if there is an outline color defined.
+      // First, do the outlining.
+      if (doOutline == DO_OUTLINE) {
+        spriteTime.setTextColor(pInfo[BGPic].otColor, TFT_BLACK);  // Load up the outline color.
+        // Diagonals
+        spriteTime.drawString(chBuffer, x - 2, y - 2);
+        spriteTime.drawString(chBuffer, x + 2, y + 2);
+        spriteTime.drawString(chBuffer, x + 2, y - 2);
+        spriteTime.drawString(chBuffer, x - 2, y + 2);
+        // Orthoginals
+        spriteTime.drawString(chBuffer, x - 2, y);
+        spriteTime.drawString(chBuffer, x + 2, y);
+        spriteTime.drawString(chBuffer, x, y - 2);
+        spriteTime.drawString(chBuffer, x, y + 2);
+      }
+    }
+    spriteTime.setTextColor(pInfo[BGPic].tColor, TFT_BLACK);  // Load up the outline color.
+    // Now, put in the actual, readable text for the time.
+    spriteTime.drawString(chBuffer, x, y);
+    spriteTime.pushToSprite(&spriteBG, 18, 52, TFT_BLACK);
+  }
+
+  // Create and draw the Date sprite onto the background sprite.
+
+  nTemp = atoi(chDayOfMonth);
+  if (nTemp < 10) sprintf(chDayOfMonth, "%2d", nTemp);
+
+  // Update the Date sprite
+
+  if (ShowFields) {
+    sprintf(chBuffer, "%s  %s %s, %i",
+            String(chDayofWeek), String(chMonth),
+            String(chDayOfMonth), iYear);
+
+    x = 5; y = 3;
+    if (pInfo[BGPic].odColor != 0) {  // Only do this if there is an outline color defined.
+      // First, do the outlining.
+      if (doOutline == DO_OUTLINE) {
+        spriteDate.setTextColor(pInfo[BGPic].odColor, TFT_BLACK);  // Load up the outline color.
+        // Diagonals
+        spriteDate.drawString(chBuffer, x - 2, y - 2);
+        spriteDate.drawString(chBuffer, x + 2, y + 2);
+        spriteDate.drawString(chBuffer, x + 2, y - 2);
+        spriteDate.drawString(chBuffer, x - 2, y + 2);
+        // Orthoginals
+        spriteDate.drawString(chBuffer, x - 2, y);
+        spriteDate.drawString(chBuffer, x + 2, y);
+        spriteDate.drawString(chBuffer, x, y - 2);
+        spriteDate.drawString(chBuffer, x, y + 2);
+      }
+    }
+    spriteDate.setTextColor(pInfo[BGPic].dColor, TFT_BLACK);  // Load up the outline color.
+    // Now, put in the actual, readable text for the time.
+    spriteDate.drawString(chBuffer, x, y);
+    spriteDate.pushToSprite(&spriteBG, 14, 128, TFT_BLACK);
+  }
+
   spriteBG.pushSprite(0, 0); spriteBG.fillSprite(TFT_BLACK);
   delay(1);
 }
@@ -418,7 +450,7 @@ void HourDance()
   //  Serial.printf("It is now %02i:00\r\n", iHour);
 
   // Do HourDance after updating the display to xx:00:00
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 2; i++) {
     tft.invertDisplay(false); delay(200);
     tft.invertDisplay(true); delay(200);
   }
@@ -458,6 +490,12 @@ void SaveOptions()
 {
   // On the modulo 10 minute, see if saving the brightness value is needed.
   // Also on the second to last second of the hour.
+  // Since this was an evolution rather than a design, it turns out that the
+  //  brightness during dark time gets written to the Hourlys preferences values
+  //  but the Hourlys during display on time do not get written to the Hourlys
+  //  preferences entries.  It only happens the first time so not a big deal but if
+  //  you type H into the Serial Monitor, you will see how it looks.  Odd, yes, but
+  //  totally workable.
   if ((iMinute > 0 && iMinute % 10 == 0 && iSecond == 0) ||
       (iMinute == 59 && iSecond == 58)) {
     preferences.begin("Hourlys", RW_MODE);
@@ -655,17 +693,24 @@ void printVers()
 void showInputOptions()
 /*******************************************************************************************/
 {
+  Serial.println("Enter ? to see the full list of options.");
+}
+/*******************************************************************************************/
+void showInputOptionsFull()
+/*******************************************************************************************/
+{
   Serial.println("\r\nEnter # to to start number entry to select a specific picture.");
   Serial.println("Enter 0-9 to finish number entry to select a specific picture.");
   Serial.println("Enter + (testing) to step to the next picture by number.");
   Serial.println("Enter - (testing) to step to the previous picture by number.");
-  Serial.println("Enter B to toggle battery usage state (full or partial).");
-  Serial.println("Enter F to toggle showing time/date/battery fields.");
-  Serial.println("Enter H (testing) to see all hourly brightness values on the Monitor.");
-  Serial.println("Enter I (testing) to invert all colors on the display.");
-  Serial.println("Enter P for the name of the current BG Pic.");
-  Serial.println("Enter R (testing) to change to a new random picture.");
-  Serial.println("Enter V to toggle battery voltage display on and off.");
+  Serial.println("Enter B to toggle Battery usage state (full or partial).");
+  Serial.println("Enter F to toggle showing time/date/battery Fields.");
+  Serial.println("Enter H (testing) to see all Hourly brightness values on the Monitor.");
+  Serial.println("Enter I (testing) to Invert all colors on the display.");
+  Serial.println("Enter L to List all of the pictures and their number.");
+  Serial.println("Enter P for the name of the current BG Picture.");
+  Serial.println("Enter R (testing) to change to a new Random picture.");
+  Serial.println("Enter V to toggle battery Voltage display on and off.");
   Serial.println("Enter ? for this list.  Upper or Lower case OK.");
   Serial.println("Enter CR or LF to finish picture number entry or execute your selection.");
   Serial.println("If you make an unknown entry, this list is printed on the monitor.\r\n");
@@ -674,37 +719,45 @@ void showInputOptions()
 void HandleSerialInput()
 /*******************************************************************************************/
 {
-  char input = Serial.read(); // Read one character from the serial input
+  char input = Serial.read();  // Read one character from the serial input
   int i, iHTemp;
 
   input = toupper(input); // Convert the character to uppercase
-  //    Serial.print("Received char: "); Serial.println(input); Serial.flush();
+  if (input != '\r' && input != '\n')
+    Serial.printf("User input %c\r\n", input);  // Show user input
+
   // In use:
-  //         # - Prepare the routine for number entry. Number terminated by CR/LF
-  //         0-9 - Input numbers to create next picture to show's number.
-  //         + - Display next numbered BG picture
-  //         - - Display previous numbered BG picture
-  //         B - Change battery usage state
-  //         F - Toggle all fields on/off
-  //         H - (Testing) Show hourly brightness numbers.
-  //         I - (Testing) Invert display colors
-  //         P - Print name of current picture on Serial Monitor
-  //         R - (Testing) Change random selection of picture (change background pic)
-  //         V - Toggle battery voltage display
-  //         ? - Show list of commands on Serial Monitor
-  //         CR/LF - End number entry, if any and show picture.
-  //         default action - Show a message that the user is drunk!  ;-))
+  //     0-9 to finish number entry to select a specific picture.");
+  //     + (testing) to step to the next picture by number.");
+  //     - (testing) to step to the previous picture by number.");
+  //     B to toggle Battery usage state (full or partial).");
+  //     F to toggle showing time/date/battery Fields.");
+  //     H (testing) to see all Hourly brightness values on the Monitor.");
+  //     I (testing) to Invert all colors on the display.");
+  //     L to List all of the pictures and their number.");
+  //     P for the name of the current BG Picture.");
+  //     R (testing) to change to a new Random picture.");
+  //     V to toggle battery Voltage display on and off.");
+  //     ? for this list.  Upper or Lower case OK.");
+  //     CR or LF to finish picture number entry or execute your selection.");
+  //     ? - Show list of commands on Serial Monitor
+  //     CR/LF - End number entry, if any and show picture.
+  //     default action - Show a message that the user is drunk!  ;-))
+  //
   // Operational note:
-  //         iUserPic, if -1 is inactive.  # sign entry initializes it to 0, then
-  //                   number entries build it up until CR/LR terminates entry, sets
-  //                   BGPic and resets iUserPic to -1.
-  //         veriPix - Set this to true to get numbers printed for the BG pictures
-  //                    during startup (in setup).
+  //
+  //     iUserPic, if -1 is inactive.  # sign entry initializes it to 0, then
+  //               number entries build it up until CR/LR terminates entry, sets
+  //               BGPic and resets iUserPic to -1.
+  //     veriPix - Set this to true to get numbers printed for the BG pictures
+  //               during startup (in setup).
 
   switch (input) {
+
     case '#':  // Prepare for user picture selection number entry.
       iUserPic = 0;
       break;
+
     case '0' ... '9':
       //    case '0': case '1': case '2': case '3': case '4':  // case '0' ... '9': should work.
       //    case '5': case '6': case '7': case '8': case '9':
@@ -715,6 +768,7 @@ void HandleSerialInput()
         showInputOptions();
       }
       break;
+
     case '+':
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
@@ -724,6 +778,7 @@ void HandleSerialInput()
         BGPic = 0;
       }
       break;
+
     case '-':
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
@@ -733,6 +788,7 @@ void HandleSerialInput()
         BGPic = 0;
       }
       break;
+
     case 'B':  // Toggle battery usage state
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
@@ -748,13 +804,15 @@ void HandleSerialInput()
       }
       showInputOptions();
       break;
+
     case 'F':  // Toggle showing all fields
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
       ShowFields = !ShowFields;
-      Serial.printf("\r\nFields will%s be shown.\r\n", ShowFields ? "" : " not");
+      Serial.printf("Fields will%s be shown.\r\n", ShowFields ? "" : " not");
       showInputOptions();
       break;
+
     case 'H':  // Show hourly brightness values
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
@@ -767,6 +825,7 @@ void HandleSerialInput()
       preferences.end();
       showInputOptions();
       break;
+
     case 'I':  // Invert screen
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
@@ -779,14 +838,20 @@ void HandleSerialInput()
       }
       showInputOptions();
       break;    // Optional here. Included for completeness.
+
+    case 'L':
+      printPixInfo();
+      break;
+
     case 'P':  // Name current BG pic
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
-      Serial.print("\r\nPicture showing is: ");
+      Serial.print("Picture showing is: ");
       Serial.print(pInfo[BGPic].picName);
       Serial.printf(", with brightness of %i/255.\r\n", tftBL_Lvl);
       showInputOptions();
       break;
+
     case 'R':  // Change BG pic
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
@@ -794,6 +859,7 @@ void HandleSerialInput()
       BGPic = int(random(randSelections));  // Name will be shown by SetPic_Colors.
       showInputOptions();
       break;
+
     case 'V':  // Toggle showing battery voltage
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
@@ -801,11 +867,13 @@ void HandleSerialInput()
       Serial.printf("\r\Battery voltage will%s be shown.\r\n", showVolts ? "" : " not");
       showInputOptions();
       break;
+
     case '?':
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
-      showInputOptions();
+      showInputOptionsFull();
       break;
+
     case '\r':
     case '\n':
       if (iUserPic >= randSelections) {
@@ -813,15 +881,16 @@ void HandleSerialInput()
         iUserPic = -1;  // Invalidate and reset number entry mode.
       }
       if (iUserPic > -1) {
-        Serial.printf("User requested loading of picture #$3i\r\n", iUserPic);
+        Serial.printf("User requested loading of picture #%3i\r\n", iUserPic);
         BGPic = iUserPic;  // Already range checked.
       }
       iUserPic = -1;  // Reset number entry mode.
       break;
+
     default:
       if (iUserPic > -1) Serial.println("Number entry aborted.");
       iUserPic = -1;
-      Serial.printf("\r\nUnknown input \'%c\'!", input);  // Handle unknown input
+      Serial.printf("\r\nUnknown input \'%c\'\r\n!", input);  // Handle unknown input
       showInputOptions();
       break;
   }

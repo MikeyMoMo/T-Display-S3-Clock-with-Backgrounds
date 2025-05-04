@@ -18,7 +18,7 @@ int SleepHour = 23;  // Default turn off display time
 //  is released.
 #define BRIGHTNESS_SHOW_MILLIS 3000
 bool  veriPix = false;  // If this is true, it will list out the tabled pic names & numbers.
-int defaultBright = 28;
+const int defaultBright = 28;
 #define MENU_HIDE_TIME 15000  // With no button press, menu will disappear in this many ms.
 int myOrientation = ORIENT_POWER_LEFT;
 
@@ -34,7 +34,7 @@ int SleepHour = 23;  // Default turn off display time
 //  is released.
 #define BRIGHTNESS_SHOW_MILLIS 3000
 bool veriPix = false;  // If this is true, it will list out the tabled pic names & numbers.
-int defaultBright = 32;
+const int defaultBright = 32;
 #define MENU_HIDE_TIME 15000  // With no button press, menu will disappear in this many ms.
 int myOrientation = ORIENT_POWER_LEFT;
 

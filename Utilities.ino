@@ -1,3 +1,7 @@
+bool iInRange (int v, int low, int high)
+{
+  return (low <= high) ? (v >= low && v <= high) : (v >= low || v <= high);
+}
 /*******************************************************************************************/
 JRESULT SetPic_Colors()
 /*******************************************************************************************/
@@ -482,20 +486,39 @@ void setHourBrightness()
                 iHour, iMinute, iSecond, iHour, tftBL_Lvl);
   preferences.end();
 
-  if (WakeupHour > SleepHour)
-    WakeUp = (iHour >= WakeupHour || iHour <= SleepHour);
-  else
-    WakeUp = (iHour >= WakeupHour && iHour <= SleepHour);
+//  if (WakeupHour > SleepHour)
+//    WakeUp = (iHour >= WakeupHour || iHour <= SleepHour);
+//  else
+//    WakeUp = (iHour >= WakeupHour && iHour <= SleepHour);
+//
+//  // Serial.printf("tftBL_Lvl now set to %i\r\n", tftBL_Lvl);
+//
+//  // If unchanged value still in there, pick default value.
+//  // If less than 500 then user set a value, let it be.
+//  if (tftBL_Lvl > 500) {  // Is it unchanged?
+//    if (WakeUp)
+//      tftBL_Lvl = defaultBright;
+//    else
+//      tftBL_Lvl = 0;
+//  }
+
+  SleepTime = iInRange(iHour, SleepHour, WakeupHour);
+  Serial.print("In sleep time? ");
+  Serial.println(SleepTime ? "Yes" : "No");
+  //  if (WakeupHour > SleepHour)
+  //    WakeUp = (iHour >= WakeupHour || iHour <= SleepHour);
+  //  else
+  //    WakeUp = (iHour >= WakeupHour && iHour <= SleepHour);
 
   // Serial.printf("tftBL_Lvl now set to %i\r\n", tftBL_Lvl);
 
   // If unchanged value still in there, pick default value.
   // If less than 500 then user set a value, let it be.
   if (tftBL_Lvl > 500) {  // Is it unchanged?
-    if (WakeUp)
-      tftBL_Lvl = defaultBright;
-    else
+    if (SleepTime)
       tftBL_Lvl = 0;
+    else
+      tftBL_Lvl = defaultBright;
   }
 
   ledcWrite(TFT_BL, tftBL_Lvl);  // Activate whatever was decided on.

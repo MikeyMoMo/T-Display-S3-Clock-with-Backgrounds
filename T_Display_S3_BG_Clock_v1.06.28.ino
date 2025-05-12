@@ -165,7 +165,7 @@ int         prevHour;                      // We have the BL for this hour
 JRESULT     JPB_RC;                        // Return code from drawing BG pic.
 uint16_t    w = 0, h = 0;
 bool        displayOn = true;
-bool        WakeUp;
+bool        SleepTime;
 bool        displayInverted = true;        // Just a little test.
 bool        ShowFields = true;
 time_t      workTime, UTC, startMillis, BLChangeMillis = 0;

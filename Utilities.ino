@@ -489,8 +489,14 @@ void setHourBrightness()
 
   // Serial.printf("tftBL_Lvl now set to %i\r\n", tftBL_Lvl);
 
-  if (!WakeUp) tftBL_Lvl = 0;
-  if (tftBL_Lvl > 500) tftBL_Lvl = defaultBright;  // == 1000 is not working.  Why?
+  // If unchanged value still in there, pick default value.
+  // If less than 500 then user set a value, let it be.
+  if (tftBL_Lvl > 500) {  // Is it unchanged?
+    if (WakeUp)
+      tftBL_Lvl = defaultBright;
+    else
+      tftBL_Lvl = 0;
+  }
 
   ledcWrite(TFT_BL, tftBL_Lvl);  // Activate whatever was decided on.
   Serial.printf("%02i:%02i:%02i - Brightness level for hour %i set to %i\r\n",
@@ -716,6 +722,7 @@ void showInputOptionsFull()
   Serial.println("Enter + (testing) to step to the next picture by number.");
   Serial.println("Enter - (testing) to step to the previous picture by number.");
   Serial.println("Enter B to toggle Battery usage state (full or partial).");
+  Serial.println("Enter D to turn on the display at default brightness or off.");
   Serial.println("Enter F to toggle showing time/date/battery Fields.");
   Serial.println("Enter H (testing) to see all Hourly brightness values on the Monitor.");
   Serial.println("Enter I (testing) to Invert all colors on the display.");
@@ -743,6 +750,7 @@ void HandleSerialInput()
   //     + (testing) to step to the next picture by number.");
   //     - (testing) to step to the previous picture by number.");
   //     B to toggle Battery usage state (full or partial).");
+  //     D turns on the display at default brightness.  If already on, turns it off.
   //     F to toggle showing time/date/battery Fields.");
   //     H (testing) to see all Hourly brightness values on the Monitor.");
   //     I (testing) to Invert all colors on the display.");
@@ -813,6 +821,31 @@ void HandleSerialInput()
         digitalWrite(15, 0);
         Serial.println("\r\nBattery usage state set to partial power. "
                        "There is no off state.");
+      }
+      showInputOptions();
+      break;
+
+    case 'D':
+      if (tftBL_Lvl == 0) {
+        Serial.println("Turning screen on.");
+        tft.writecommand(ST7789_DISPON);  // Turn on display hardware.
+        tftBL_Lvl = defaultBright;
+        prevBL_Lvl = tftBL_Lvl;
+        ledcWrite(TFT_BL, tftBL_Lvl);  // Turn on the backlight
+      } else {
+        tft.fillScreen(TFT_BLACK);
+        ledcWrite(TFT_BL, defaultBright);  // Activate whatever was decided on.
+        delay(10);
+        tft.setTextColor(TFT_YELLOW, TFT_BLACK);
+        tft.drawString("Turning off", tft.width() / 2, dispLine3, 4);
+        tft.drawString("screen.", tft.width() / 2, dispLine4, 4);
+        Serial.println("Turning screen off.");
+        delay(5000);
+        tft.fillScreen(TFT_BLACK);
+        ledcWrite(TFT_BL, 0);  // Turn off the backlight
+        tftBL_Lvl = 0;
+        prevBL_Lvl = tftBL_Lvl;
+        tft.writecommand(ST7789_DISPOFF);  // Turn off display hardware.
       }
       showInputOptions();
       break;

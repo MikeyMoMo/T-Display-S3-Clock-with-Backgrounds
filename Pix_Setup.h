@@ -559,7 +559,7 @@ struct picDef pInfo[] = {
     .odColor = outlineRed
   },
   { .picName = "/ColorStrata.jpg",
-    .bColor = RGB565(5, 5, 5), .tColor = TFT_WHITE, .tHatch = false,
+    .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
     .dColor = TFT_WHITE, .dHatch = false,
     .obColor = outlineRed, .otColor = outlineRed,
     .odColor = outlineRed
@@ -613,9 +613,9 @@ struct picDef pInfo[] = {
     .odColor = outlineRed
   },
   { .picName = "/CryptoMoon.jpg",
-    .bColor = TFT_WHITE, .tColor = TFT_WHITE, .tHatch = false,
-    .dColor = TFT_YELLOW, .dHatch = false,
-    .obColor = outlineRed, .otColor = outlineRed,
+    .bColor = TFT_WHITE, .tColor = RGB565(250,80,250), .tHatch = false,  // Lavender
+    .dColor = TFT_WHITE, .dHatch = false,
+    .obColor = outlineRed, .otColor = TFT_WHITE,
     .odColor = outlineRed
   },
   { .picName = "/CrystalFlower.jpg",

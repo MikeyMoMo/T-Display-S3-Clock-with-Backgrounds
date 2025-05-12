@@ -2,7 +2,6 @@
 bool jpg_output_Sprite(int16_t x, int16_t y, uint16_t w, uint16_t h, uint16_t* bitmap)
 /*******************************************************************************************/
 {
-
   // This function is be called during decoding of the jpeg file to
   // render each block to the sprite spriteBG.  It us used to load all of the BG pictures.
 
@@ -38,7 +37,7 @@ void printPixInfo()
 /*******************************************************************************************/
 {
   for (int i = 0; i < randSelections; i++) {
-    Serial.print("Picture "); 
+    Serial.print("Picture ");
     printPicName(i, pInfo[i].picName);
   }
 }

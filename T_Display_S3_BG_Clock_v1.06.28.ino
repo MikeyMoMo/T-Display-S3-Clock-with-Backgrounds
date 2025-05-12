@@ -198,7 +198,7 @@ void setup()
   tft.init();  // Init the display.  What else?
 
   tft.setRotation(myOrientation);
-  if (myOrientation = ORIENT_POWER_LEFT) {  // Asjust pins based on display orientation.
+  if (myOrientation == ORIENT_POWER_LEFT) {  // Asjust pins based on display orientation.
     incrPin = 0; decrPin = 14;  // Increase brightness is always on top, and...
   } else {
     incrPin = 14; decrPin = 0;  // Decrease brightness is always on the bottom button.

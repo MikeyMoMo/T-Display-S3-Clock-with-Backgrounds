@@ -2131,10 +2131,10 @@ struct picDef pInfo[] = {
     .odColor = outlineRed
   },
   { .picName = "/RedBlack.jpg",
-    .bColor = RGB565(250, 5, 250), .tColor = RGB565(250, 5, 250), .tHatch = false,
-    .dColor = RGB565(250, 5, 250), .dHatch = false,
-    .obColor = outlineRed, .otColor = outlineRed,
-    .odColor = outlineRed
+    .bColor = TFT_YELLOW, .tColor = TFT_YELLOW, .tHatch = false,
+    .dColor = TFT_YELLOW, .dHatch = false,
+    .obColor = 0, .otColor = 0,
+    .odColor = 0
   },
   { .picName = "/RedBlueRocks.jpg",
     .bColor = TFT_YELLOW, .tColor = TFT_WHITE, .tHatch = false,
